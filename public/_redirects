@@ -1,2 +1,2 @@
-# Normalize multiple leading slashes to the root path
-///*   /   301
+# (Intentionally left without redirect rules for now to avoid redirect loops
+# and let Cloudflare serve the static 404 from Next's export for unknown paths.)

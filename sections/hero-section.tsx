@@ -111,7 +111,7 @@ function HeroTemplateStack() {
         className="relative flex h-full w-full flex-col gap-3 sm:gap-4"
       >
         {/* Top bar */}
-        <div className="flex items-center justify-between rounded-xl border border-slate-700/70 bg-slate-900/80 px-3 py-2.5">
+        <div className="flex items-center justify-between rounded-xl border border-slate-700/70 bg-slate-900/80 px-3.5 py-3">
           <div className="flex items-center gap-2">
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-[0.6rem] font-semibold text-slate-950 shadow-glow-primary">
               AI
@@ -171,50 +171,52 @@ function HeroTemplateStack() {
                 </div>
 
                 {/* Side controls */}
-                <div className="flex flex-col gap-2.5 text-[0.7rem] text-slate-200">
-                  <div className="rounded-xl border border-slate-700/80 bg-slate-950/80 p-2.5">
+                <div className="flex flex-col gap-3 text-[0.7rem] text-slate-200">
+                  <div className="rounded-xl border border-slate-700/80 bg-slate-950/80 p-3">
                     <div className="mb-1 flex items-center justify-between text-[0.65rem] text-slate-400">
                       <span className="numeric uppercase tracking-[0.2em]">
                         Scenes
                       </span>
                       <span>AI picks</span>
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="space-y-2">
                       {["Hook", "Value", "CTA"].map((label, idx) => (
                         <div
                           key={label}
                           className={cn(
-                            "flex items-center justify-between rounded-lg px-2 py-1.5 border border-slate-700/70 bg-slate-900/80",
+                            "rounded-lg border border-slate-700/70 bg-slate-900/80 px-3 py-2.5",
                             idx === 0 && "border-secondary/80 bg-secondary/10"
                           )}
                         >
-                          <div className="flex items-center gap-1.5">
-                            <span className="numeric text-[0.6rem] text-slate-400">
-                              0{idx + 1}
+                          <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between">
+                            <div className="flex items-center gap-1.5">
+                              <span className="numeric text-[0.6rem] text-slate-400">
+                                0{idx + 1}
+                              </span>
+                              <span>{label}</span>
+                            </div>
+                            <span className="numeric text-[0.6rem] text-slate-400 sm:text-right mt-0.5 sm:mt-0">
+                              {idx === 0 ? "0:00–0:06" : idx === 1 ? "0:06–0:18" : "0:18–0:30"}
                             </span>
-                            <span>{label}</span>
                           </div>
-                          <span className="numeric text-[0.6rem] text-slate-400">
-                            {idx === 0 ? "0:00–0:06" : idx === 1 ? "0:06–0:18" : "0:18–0:30"}
-                          </span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-slate-700/80 bg-slate-950/80 p-2.5">
+                  <div className="rounded-xl border border-slate-700/80 bg-slate-950/80 p-3">
                     <div className="mb-1 flex items-center justify-between text-[0.65rem] text-slate-400">
                       <span className="numeric uppercase tracking-[0.2em]">
                         Outputs
                       </span>
                       <span>4 canvases</span>
                     </div>
-                    <div className="grid grid-cols-2 gap-1.5">
+                    <div className="grid grid-cols-2 gap-2">
                       {["9:16", "16:9", "1:1", "4:5"].map((size, i) => (
                         <div
                           key={size}
                           className={cn(
-                            "flex items-center justify-between rounded-lg px-2 py-1.5 border border-slate-700/60 bg-slate-900/80",
+                            "flex items-center justify-between rounded-lg px-2.5 py-2 border border-slate-700/60 bg-slate-900/80",
                             i === 0 && "border-secondary/80 bg-secondary/10"
                           )}
                         >
@@ -230,9 +232,9 @@ function HeroTemplateStack() {
           </div>
 
           {/* Right side floating stats */}
-          <div className="flex flex-col gap-3 sm:gap-4">
+          <div className="flex flex-col gap-3.5 sm:gap-4">
             <motion.div
-              className="card-floating relative flex flex-col gap-2 rounded-2xl border border-slate-700/70 bg-slate-950/90 p-3"
+              className="card-floating relative flex flex-col gap-2.5 rounded-2xl border border-slate-700/70 bg-slate-950/90 p-3.5"
               animate={{ y: [0, -6, 0] }}
               transition={{
                 duration: 9,
@@ -249,7 +251,7 @@ function HeroTemplateStack() {
                   Live
                 </span>
               </div>
-              <div className="space-y-1.5 text-[0.7rem]">
+              <div className="space-y-2 text-[0.7rem]">
                 <div className="flex items-center justify-between">
                   <span>Average edit time</span>
                   <span className="numeric text-slate-100">12 min</span>
@@ -269,7 +271,7 @@ function HeroTemplateStack() {
             </motion.div>
 
             <motion.div
-              className="card-floating relative flex flex-col gap-2 rounded-2xl border border-slate-700/70 bg-slate-950/90 p-3"
+              className="card-floating relative flex flex-col gap-2.5 rounded-2xl border border-slate-700/70 bg-slate-950/90 p-3.5"
               animate={{ y: [0, 6, 0] }}
               transition={{
                 duration: 10,
@@ -283,7 +285,7 @@ function HeroTemplateStack() {
                   Synced
                 </span>
               </div>
-              <div className="flex flex-wrap gap-1.5 text-[0.6rem]">
+              <div className="flex flex-wrap gap-2 text-[0.6rem]">
                 {["YouTube", "TikTok", "Reels", "Shorts", "LinkedIn"].map(
                   (platform) => (
                     <span

@@ -23,6 +23,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://studio.meddler.io"),
   title: SITE.title,
   description: SITE.description,
   icons: {
