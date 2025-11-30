@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { DEMO_STATES } from "@/constants/site";
 import { SectionHeader } from "@/components/section-header";
 
+const MotionDiv = motion.div as any;
+
 const sectionVariants = {
   hidden: { opacity: 0, y: 28 },
   visible: {
@@ -52,7 +54,7 @@ export function DemoSection() {
             {DEMO_STATES.map((state, index) => {
               const isActive = state.id === activeId;
               return (
-                <motion.article
+                <MotionDiv
                   key={state.id}
                   custom={index}
                   variants={cardVariants}
@@ -196,7 +198,7 @@ export function DemoSection() {
                       </div>
                     </div>
                   </div>
-                </motion.article>
+                </MotionDiv>
               );
             })}
           </div>

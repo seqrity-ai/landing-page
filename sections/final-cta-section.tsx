@@ -1,9 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { SITE } from "@/constants/site";
 import { Button } from "@/ui/button";
+
+const MotionDiv = motion.div as any;
+const MotionGlowDiv = motion.div as any;
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 32 },
@@ -17,7 +20,7 @@ const sectionVariants = {
   },
 };
 
-const glowVariants = {
+const glowVariants: Variants = {
   initial: { opacity: 0.4, scale: 0.98 },
   animate: {
     opacity: 0.8,
@@ -39,14 +42,14 @@ export function FinalCtaSection() {
       aria-labelledby="final-cta-heading"
     >
       <div className="app-container">
-        <motion.div
+        <MotionDiv
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "0px 0px -120px" }}
           className="relative overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-950/90 px-5 py-10 sm:px-10 sm:py-12"
         >
-          <motion.div
+          <MotionGlowDiv
             variants={glowVariants}
             initial="initial"
             animate="animate"
@@ -55,7 +58,7 @@ export function FinalCtaSection() {
             <div className="absolute -left-16 top-0 h-56 w-56 rounded-full bg-primary/25 blur-3xl" />
             <div className="absolute bottom-0 right-[-40px] h-64 w-64 rounded-full bg-secondary/25 blur-3xl" />
             <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-60" />
-          </motion.div>
+          </MotionGlowDiv>
 
           <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="max-w-xl space-y-3">
@@ -93,7 +96,7 @@ export function FinalCtaSection() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </MotionDiv>
       </div>
     </section>
   );

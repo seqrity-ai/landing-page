@@ -23,9 +23,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "types": [
-      "node",
-      "react",
-      "react-dom"
+      "node"
     ],
     "baseUrl": ".",
     "paths": {
