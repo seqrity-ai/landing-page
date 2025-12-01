@@ -46,3 +46,6 @@
 ## 2025-12-01
 - Font sizing tweak (d2ccc0f)
 
+## 2025-12-01
+- +Feature: walkthrough (ad995c2)
+

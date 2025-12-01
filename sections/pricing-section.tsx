@@ -2,6 +2,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/section-header";
 import { PRICING_PLANS } from "@/constants/site";
@@ -56,6 +57,12 @@ export function PricingSection() {
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {PRICING_PLANS.map((plan, index) => {
               const isHighlighted = !!plan.highlighted;
+              const ctaHref =
+                plan.id === "team"
+                  ? "/book-demo"
+                  : plan.id === "enterprise"
+                  ? "/contact-sales"
+                  : "/book-demo";
               return (
                 <motion.article
                   key={plan.id}
@@ -115,17 +122,19 @@ export function PricingSection() {
                     </ul>
 
                     <div className="mt-auto pt-2">
-                      <Button
-                        className={
-                          "w-full text-xs font-medium uppercase tracking-[0.16em] " +
-                          (isHighlighted
-                            ? "bg-gradient-to-r from-primary to-secondary text-slate-950 shadow-glow-primary hover:opacity-90"
-                            : "border border-slate-700/80 bg-slate-900/70 text-slate-100 hover:border-primary/60 hover:text-primary")
-                        }
-                        variant={isHighlighted ? "default" : "outline"}
-                      >
-                        {plan.ctaLabel}
-                      </Button>
+                      <Link href={ctaHref} aria-label={plan.ctaLabel}>
+                        <Button
+                          className={
+                            "w-full text-xs font-medium uppercase tracking-[0.16em] " +
+                            (isHighlighted
+                              ? "bg-gradient-to-r from-primary to-secondary text-slate-950 shadow-glow-primary hover:opacity-90"
+                              : "border border-slate-700/80 bg-slate-900/70 text-slate-100 hover:border-primary/60 hover:text-primary")
+                          }
+                          variant={isHighlighted ? "default" : "outline"}
+                        >
+                          {plan.ctaLabel}
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </motion.article>
