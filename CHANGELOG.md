@@ -34,3 +34,6 @@
 ## 2025-12-01
 - Frezzed content (faf90e2)
 
+## 2025-12-01
+- Font sizing tweak (7efd593)
+
