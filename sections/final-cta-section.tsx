@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 import { SITE } from "@/constants/site";
 import { Button } from "@/ui/button";
@@ -81,9 +82,11 @@ export function FinalCtaSection() {
 
             <div className="flex flex-col items-start gap-3 sm:items-end">
               <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-                <Button className="w-full sm:w-auto bg-gradient-to-r from-primary to-secondary text-[0.78rem] font-medium uppercase tracking-[0.18em] text-slate-950 shadow-glow-primary hover:opacity-90">
-                  {SITE.primaryCTA}
-                </Button>
+                <Link href="/book-demo" aria-label={SITE.primaryCTA} className="w-full sm:w-auto">
+                  <Button className="w-full sm:w-auto bg-gradient-to-r from-primary to-secondary text-[0.78rem] font-medium uppercase tracking-[0.18em] text-slate-950 shadow-glow-primary hover:opacity-90">
+                    {SITE.primaryCTA}
+                  </Button>
+                </Link>
                 <Button
                   variant="ghost"
                   className="w-full sm:w-auto border border-slate-700/80 bg-slate-900/70 text-[0.78rem] font-medium uppercase tracking-[0.18em] text-slate-100 hover:border-secondary/70 hover:text-secondary"

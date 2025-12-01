@@ -45,9 +45,9 @@ export function DemoSection() {
           viewport={{ once: true, margin: "0px 0px -120px" }}
         >
           <SectionHeader
-            eyebrow="Before vs After AI"
-            title="See the workflow shift in one glance."
-            description="Move from manual timelines and scattered exports to a template-led, AI-coordinated pipeline that ships across every channel at once."
+            eyebrow="Before vs after seqrity.ai"
+            title="See how unified Signals change your day-to-day."
+            description="Compare life with scattered dashboards and spreadsheets against a Signal-led workflow that connects scanners, assets and teams."
           />
 
           <div className="mt-8 grid gap-5 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
@@ -107,8 +107,8 @@ export function DemoSection() {
                           <span>Timeline</span>
                           <span className="numeric text-slate-400">
                             {state.id === "before"
-                              ? "Manual cuts & tracks"
-                              : "AI-selected hooks"}
+                              ? "Manual reconciliation"
+                              : "Signal-led triage"}
                           </span>
                         </div>
                         <div className="space-y-2">
@@ -143,24 +143,24 @@ export function DemoSection() {
 
                       <div className="space-y-3">
                         <div className="relative rounded-xl border border-slate-800/80 bg-slate-950/90 p-3">
-                          <div className="mb-2 flex items-center justify-between text-[0.7rem] text-slate-300">
-                            <span>
-                              {state.id === "before"
-                                ? "Channel outputs"
-                                : "Channel-ready exports"}
-                            </span>
-                            <span className="numeric text-slate-400">
-                              {state.id === "before" ? "Per-platform" : "Parallel"}
-                            </span>
-                          </div>
+                        <div className="mb-2 flex items-center justify-between text-[0.7rem] text-slate-300">
+                          <span>
+                            {state.id === "before"
+                              ? "Tools & surfaces"
+                              : "Signals & workflows"}
+                          </span>
+                          <span className="numeric text-slate-400">
+                            {state.id === "before" ? "Per-tool" : "Unified"}
+                          </span>
+                        </div>
                           <div className="grid grid-cols-2 gap-2">
                             {[
-                              "YouTube",
-                              "Shorts",
-                              "Reels",
-                              "TikTok",
-                              "LinkedIn",
-                              "X",
+                              "Web apps",
+                              "APIs",
+                              "Mobile",
+                              "Code",
+                              "Cloud",
+                              "Network",
                             ].map((channel) => (
                               <div
                                 key={channel}
@@ -185,8 +185,8 @@ export function DemoSection() {
                             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                             <span className="numeric">
                               {state.id === "before"
-                                ? "3–5 hours / video"
-                                : "8–12 minutes / video"}
+                                ? "3–5 hours / week"
+                                : "Minutes / day"}
                             </span>
                           </span>
                           <span className="text-slate-400">

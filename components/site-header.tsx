@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { Menu, X, Play, ArrowRight } from "lucide-react";
 import { SITE, NAV_LINKS } from "@/constants/site";
 import { Button } from "@/ui/button";
@@ -18,13 +19,18 @@ function LogoMark() {
         <span className="text-xs uppercase tracking-[0.22em] text-slate-400">
           {SITE.appName}
         </span>
-        {/* Hide long subtitle on very small widths to avoid overflow */}
-        <span className="hidden sm:block text-[0.7rem] font-medium text-slate-100">
-          {SITE.title}
+        {/* Show a shorter tagline only on larger screens to avoid header overflow */}
+        <span className="hidden lg:block max-w-[11rem] truncate text-[0.7rem] font-medium text-slate-100">
+          {SITE.tagline}
         </span>
       </div>
     </div>
   );
+}
+
+function getLinkHash(href: string): string {
+  const hashIndex = href.indexOf("#");
+  return hashIndex >= 0 ? href.slice(hashIndex) : href;
 }
 
 export function SiteHeader() {
@@ -34,7 +40,10 @@ export function SiteHeader() {
   React.useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const sectionIds = NAV_LINKS.map((link) => link.href.replace("#", ""));
+    const sectionIds = NAV_LINKS.map((link) => {
+      const hashIndex = link.href.indexOf("#");
+      return hashIndex >= 0 ? link.href.slice(hashIndex + 1) : "";
+    }).filter(Boolean);
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean) as HTMLElement[];
@@ -65,7 +74,9 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950 shadow-[0_12px_40px_rgba(15,23,42,0.9)]">
       <div className="app-container flex h-14 sm:h-16 items-center justify-between gap-3">
-        <LogoMark />
+        <Link href="/" aria-label="Go to seqrity.ai home" className="inline-flex items-center gap-2">
+          <LogoMark />
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8 text-xs font-medium">
@@ -75,7 +86,7 @@ export function SiteHeader() {
               href={link.href}
               className={cn(
                 "group relative inline-flex flex-col items-start gap-1 transition-colors",
-                activeSection === link.href
+                activeSection === getLinkHash(link.href)
                   ? "text-slate-50"
                   : "text-slate-300 hover:text-slate-50"
               )}
@@ -84,7 +95,7 @@ export function SiteHeader() {
               <span
                 className={cn(
                   "h-[1px] bg-gradient-to-r from-primary to-secondary transition-all duration-200",
-                  activeSection === link.href
+                  activeSection === getLinkHash(link.href)
                     ? "w-6 shadow-[0_0_12px_rgba(94,234,212,0.8)]"
                     : "w-0 group-hover:w-6"
                 )}
@@ -104,14 +115,15 @@ export function SiteHeader() {
             <Play className="h-3.5 w-3.5" />
             <span className="whitespace-nowrap">{SITE.secondaryCTA}</span>
           </Button>
-          <Button
-            size="sm"
-            className="gap-1.5"
-            aria-label={SITE.primaryCTA}
-          >
-            <span className="whitespace-nowrap">{SITE.primaryCTA}</span>
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Button>
+          <Link href="/book-demo" aria-label={SITE.primaryCTA}>
+            <Button
+              size="sm"
+              className="gap-1.5"
+            >
+              <span className="whitespace-nowrap">{SITE.primaryCTA}</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile menu toggle */}
@@ -135,7 +147,13 @@ export function SiteHeader() {
           <div className="flex flex-col min-h-screen nav-overlay-bg">
             {/* Overlay header (logo + close) */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800/70">
-              <LogoMark />
+              <Link
+                href="/"
+                aria-label="Go to seqrity.ai home"
+                className="inline-flex items-center gap-2"
+              >
+                <LogoMark />
+              </Link>
               <button
                 type="button"
                 className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-700/70 bg-slate-900/80 text-slate-200 hover:border-primary/60 hover:text-white transition-all"
@@ -155,7 +173,7 @@ export function SiteHeader() {
                     href={link.href}
                     className={cn(
                       "flex items-center justify-between rounded-lg px-3 py-2 bg-slate-900 hover:bg-slate-800",
-                      activeSection === link.href &&
+                      activeSection === getLinkHash(link.href) &&
                         "border border-primary/40 shadow-[0_0_16px_rgba(94,234,212,0.4)]"
                     )}
                     onClick={() => setIsOpen(false)}
@@ -181,12 +199,14 @@ export function SiteHeader() {
                     {SITE.secondaryCTA}
                   </span>
                 </Button>
-                <Button size="sm" fullWidth className="gap-1.5">
-                  <span className="whitespace-nowrap">
-                    {SITE.primaryCTA}
-                  </span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Button>
+                <Link href="/book-demo">
+                  <Button size="sm" fullWidth className="gap-1.5">
+                    <span className="whitespace-nowrap">
+                      {SITE.primaryCTA}
+                    </span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

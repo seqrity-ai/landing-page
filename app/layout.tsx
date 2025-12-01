@@ -3,6 +3,7 @@ import "./../styles/globals.css";
 import { SITE } from "@/constants/site";
 import { cn } from "@/lib/utils";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { ToastProvider } from "@/components/toast-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://studio.meddler.io"),
+  metadataBase: new URL("https://seqrity.ai"),
   title: SITE.title,
   description: SITE.description,
   icons: {
@@ -44,12 +45,12 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Meddler Studio",
-  applicationCategory: "VideoEditingSoftware",
+  name: "seqrity.ai",
+  applicationCategory: "SecurityApplication",
   description:
-    "AI video automation that turns raw footage into channel-ready clips for YouTube, TikTok, Reels, Shorts, and LinkedIn.",
+    "seqrity.ai is a unified DevSecOps and application security operations platform that turns fragmented findings into prioritized Signals with lifecycle workflows.",
   operatingSystem: "Web",
-  url: "https://studio.meddler.io",
+  url: "https://seqrity.ai",
 };
 
 type RootLayoutProps = {
@@ -72,7 +73,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <main className="app-main">{children}</main>
+        <ToastProvider>
+          <main className="app-main">{children}</main>
+        </ToastProvider>
       </body>
     </html>
   );

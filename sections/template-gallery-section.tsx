@@ -293,7 +293,7 @@ function TemplateThumbnail({ item }: { item: any }) {
 export function TemplateGallerySection() {
   return (
     <section
-      id="templates"
+      id="analytics"
       className="section"
       aria-labelledby="templates-heading"
     >
@@ -305,9 +305,9 @@ export function TemplateGallerySection() {
           viewport={{ once: true, margin: "0px 0px -120px" }}
         >
           <SectionHeader
-            eyebrow="Templates"
-            title="Template-first canvas for every channel."
-            description="Save your best-performing layouts as reusable templates—AI slots in scenes, captions, overlays, and CTAs for each new episode."
+            eyebrow="Posture & analytics"
+            title="Out-of-the-box posture views for your Signals."
+            description="Start from opinionated views for severity, coverage, SLAs and exec summaries—then tailor them to each workspace and stakeholder."
           />
 
           <motion.div
@@ -324,11 +324,11 @@ export function TemplateGallerySection() {
               <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-900/80 px-2.5 py-1 border border-slate-700/70">
                 <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
                 <span className="numeric uppercase tracking-[0.2em]">
-                  Drag to browse templates
+                  Scroll to browse posture views
                 </span>
               </span>
               <span className="hidden sm:inline numeric text-slate-400">
-                {TEMPLATE_GALLERY.length} presets • vertical & horizontal
+                {TEMPLATE_GALLERY.length} views • exec & operational
               </span>
             </div>
 
@@ -385,7 +385,7 @@ export function TemplateGallerySection() {
                           {item.badge ?? `${item.category} • ${item.duration}`}
                         </span>
                         <span className="text-slate-500">
-                          Hover to preview animation
+                          Designed for security & exec reviews
                         </span>
                       </div>
                     </div>

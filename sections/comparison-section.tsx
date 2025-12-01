@@ -47,9 +47,9 @@ export function ComparisonSection() {
 
   return (
     <section
-      id="comparison"
+      id="why-seqrity"
       className="section"
-      aria-labelledby="comparison-heading"
+      aria-labelledby="why-seqrity-heading"
     >
       <div className="app-container">
         <motion.div
@@ -59,9 +59,9 @@ export function ComparisonSection() {
           viewport={{ once: true, margin: "0px 0px -120px" }}
         >
           <SectionHeader
-            eyebrow="Why this stack"
-            title="Built for teams who treat video as a system."
-            description="Compare how traditional editors stack up against template-led, automation-first workflows designed for multi-channel content."
+            eyebrow="Why seqrity.ai"
+            title="What changes when you run security on Signals, not siloed tools."
+            description="Compare isolated scanner dashboards, ticket queues and legacy GRC tools with a unified Signal feed that understands assets, lifecycle and automation."
           />
 
           <MotionTableContainer
@@ -152,13 +152,13 @@ export function ComparisonSection() {
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-900/80 px-2.5 py-1 border border-slate-700/70">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                     <span className="numeric">
-                      Our product is built for recurring, multi-canvas series.
+                      seqrity.ai is built for continuous application security operations.
                     </span>
                   </span>
                   <span className="hidden sm:inline text-slate-500">•</span>
                   <span>
-                    Not a generic editor—an automation layer that sits on top of
-                    your entire video pipeline.
+                    Not a generic dashboard—a Signal and workflow layer that sits on top of
+                    your entire application surface.
                   </span>
                 </div>
               </div>

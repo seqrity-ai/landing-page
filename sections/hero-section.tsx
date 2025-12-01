@@ -2,6 +2,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, Play, Sparkles, LayoutTemplate, Zap } from "lucide-react";
 import { SITE, HERO_HIGHLIGHTS } from "@/constants/site";
@@ -118,14 +119,16 @@ function HeroTemplateStack() {
             </span>
             <div className="flex flex-col">
               <span className="text-[0.7rem] uppercase tracking-[0.22em] text-slate-400">
-                Timeline
+                Signals
               </span>
-              <span className="text-xs text-slate-100">Episode 14 – Clip set</span>
+              <span className="text-xs text-slate-100">
+                Workspace · Production
+              </span>
             </div>
           </div>
           <div className="flex items-center gap-1.5 text-[0.7rem] text-slate-300">
             <Sparkles className="h-3.5 w-3.5 text-secondary" />
-            <span className="numeric">Auto-cut in progress</span>
+            <span className="numeric">Signals being normalized</span>
           </div>
         </div>
 
@@ -175,9 +178,9 @@ function HeroTemplateStack() {
               <div className="rounded-xl border border-slate-700/70 bg-slate-950/90 px-3 py-3.5">
                 <div className="mb-2 flex items-center justify-between text-[0.65rem] text-slate-400">
                   <span className="numeric uppercase tracking-[0.2em]">
-                    Timeline
+                    Signals queue
                   </span>
-                  <span>00:00 — 00:30</span>
+                  <span>Now — 30 days</span>
                 </div>
 
                 {/* Time ruler / playhead */}
@@ -190,13 +193,13 @@ function HeroTemplateStack() {
                 {/* Tracks */}
                 <div className="space-y-1.5 text-[0.65rem]">
                   {[
-                    { label: "Video", color: "from-primary/80 to-secondary/70" },
+                    { label: "Signals", color: "from-primary/80 to-secondary/70" },
                     {
-                      label: "Captions",
+                      label: "Assets",
                       color: "from-emerald-500/80 to-emerald-400/70",
                     },
                     {
-                      label: "Overlays",
+                      label: "Workflows",
                       color: "from-sky-500/70 to-sky-400/60",
                     },
                   ].map((track) => (
@@ -237,12 +240,12 @@ function HeroTemplateStack() {
             <div className="rounded-2xl border border-slate-700/80 bg-slate-950/90 p-3.5">
               <div className="mb-2 flex items-center justify-between text-[0.65rem] text-slate-400">
                 <span className="numeric uppercase tracking-[0.2em]">
-                  Scenes
+                  Queues
                 </span>
-                <span>AI picks</span>
+                <span>Signal views</span>
               </div>
               <div className="space-y-2">
-                {["Hook", "Value", "CTA"].map((label, idx) => (
+                {["Backlog", "In triage", "Ready to fix"].map((label, idx) => (
                   <div
                     key={label}
                     className={cn(
@@ -259,10 +262,10 @@ function HeroTemplateStack() {
                       </div>
                       <span className="numeric text-[0.6rem] text-slate-400 sm:text-right mt-0.5 sm:mt-0">
                         {idx === 0
-                          ? "0:00–0:06"
+                          ? "Untriaged"
                           : idx === 1
-                          ? "0:06–0:18"
-                          : "0:18–0:30"}
+                          ? "Assigned"
+                          : "In verification"}
                       </span>
                     </div>
                   </div>
@@ -274,12 +277,12 @@ function HeroTemplateStack() {
             <div className="rounded-2xl border border-slate-700/80 bg-slate-950/90 p-3.5">
               <div className="mb-2 flex items-center justify-between text-[0.65rem] text-slate-400">
                 <span className="numeric uppercase tracking-[0.2em]">
-                  Outputs
+                  Posture views
                 </span>
-                <span>4 canvases</span>
+                <span>4 dashboards</span>
               </div>
               <div className="grid grid-cols-2 gap-2">
-                {["9:16", "16:9", "1:1", "4:5"].map((size, i) => (
+                {["Signals", "Assets", "SLAs", "Exec"].map((size, i) => (
                   <div
                     key={size}
                     className={cn(
@@ -308,7 +311,7 @@ function HeroTemplateStack() {
                 <div className="flex items-center justify-between text-[0.7rem] text-slate-300">
                   <span className="inline-flex items-center gap-1 text-secondary">
                     <Zap className="h-3.5 w-3.5" />
-                    Render queue
+                    Signals queue
                   </span>
                   <span className="numeric text-[0.65rem] text-slate-400">
                     Live
@@ -316,15 +319,15 @@ function HeroTemplateStack() {
                 </div>
                 <div className="space-y-1.5 text-[0.7rem]">
                   <div className="flex items-center justify-between">
-                    <span>Average edit time</span>
-                    <span className="numeric text-slate-100">12 min</span>
+                    <span>Average time to triage</span>
+                    <span className="numeric text-slate-100">18 min</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span>Exports / week</span>
+                    <span>Signals closed this month</span>
                     <span className="numeric text-emerald-400">+4.2x</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span>Approval rate</span>
+                    <span>High & critical coverage</span>
                     <span className="numeric text-sky-300">97%</span>
                   </div>
                 </div>
@@ -343,13 +346,13 @@ function HeroTemplateStack() {
                 }}
               >
                 <div className="flex items-center justify-between text-[0.7rem] text-slate-300">
-                  <span>Channels</span>
+                  <span>Surfaces</span>
                   <span className="numeric text-[0.65rem] text-slate-400">
-                    Synced
+                    Connected
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-1.5 text-[0.6rem]">
-                  {["YouTube", "TikTok", "Reels", "Shorts", "LinkedIn"].map(
+                  {["Web apps", "APIs", "Mobile", "Code", "Cloud"].map(
                     (platform) => (
                       <span
                         key={platform}
@@ -393,7 +396,7 @@ export function HeroSection() {
               ★
             </span>
             <span className="numeric">
-              AI video automation for template-first teams
+              Unified Signals for modern AppSec teams
             </span>
           </motion.div>
 
@@ -403,11 +406,11 @@ export function HeroSection() {
             variants={staggeredVariants}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] xl:text-[3.6rem] font-semibold font-heading tracking-tight leading-tight"
           >
-            Turn raw footages into{" "}
+            Turn fragmented security findings into{" "}
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              channel-ready videos
+              one actionable Signal feed
             </span>{" "}
-            in minutes, not days.
+            across apps, APIs, mobile and cloud.
           </motion.h1>
 
           <motion.p
@@ -424,10 +427,12 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
           >
             <div className="flex items-center gap-3">
-              <Button size="lg" className="gap-2">
-                <span>{SITE.primaryCTA}</span>
-                <ArrowRight className="h-4 w-4" />
-              </Button>
+              <Link href="/book-demo" aria-label={SITE.primaryCTA}>
+                <Button size="lg" className="gap-2">
+                  <span>{SITE.primaryCTA}</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
               <Button
                 variant="secondary"
                 size="lg"
@@ -455,9 +460,9 @@ export function HeroSection() {
               </div>
               <span className="text-[0.7rem] leading-tight text-slate-300">
                 <span className="numeric font-semibold text-slate-50">
-                  Creators & teams
+                  Security & engineering teams
                 </span>{" "}
-                ship on-brand clips 4x faster.
+                close critical findings faster, with shared context.
               </span>
             </div>
           </motion.div>

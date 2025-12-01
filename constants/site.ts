@@ -1,13 +1,13 @@
 export const SITE = {
-  appName: "Meddler",
-  title: "Meddler Studio",
-  tagline: "Turn long-form recordings into channel-ready clips in minutes.",
+  appName: "seqrity.ai",
+  title: "seqrity.ai — Unified DevSecOps & application security operations",
+  tagline: "Turn fragmented security findings into one actionable Signal feed.",
   logo: "/logo_placeholder.svg",
   logoSmall: "/logo_small_placeholder.svg",
-  primaryCTA: "Start free",
-  secondaryCTA: "Watch demo",
+  primaryCTA: "Book a demo",
+  secondaryCTA: "Watch tour",
   description:
-    "Meddler Studio is an AI-powered, template-first video editor that turns raw recordings into finished, on-brand clips with automatic captioning, voice-over, smart audio mixing, multi-canvas resizing and one-click publishing.",
+    "seqrity.ai connects your apps, APIs, mobile apps, code and infrastructure to unify noisy scanner outputs into prioritized Signals, orchestrate findings from discovery to remediation, and give security and engineering leaders a single view of application risk.",
 } as const;
 
 export type NavLink = {
@@ -16,17 +16,17 @@ export type NavLink = {
 };
 
 export const NAV_LINKS: NavLink[] = [
-  { href: "#how-it-works", label: "Workflow" },
-  { href: "#features", label: "Features" },
-  { href: "#templates", label: "Templates" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#testimonials", label: "Stories" },
+  { href: "/#how-it-works", label: "Product" },
+  { href: "/#why-seqrity", label: "Why seqrity" },
+  { href: "/#analytics", label: "Analytics" },
+  { href: "/#use-cases", label: "Use cases" },
+  { href: "/#pricing", label: "Pricing" },
 ];
 
 export const HERO_HIGHLIGHTS: string[] = [
-  "Template-driven AI video creation",
-  "Intelligent captions & voiceover in minutes",
-  "Multi-channel ready exports, auto-posted",
+  "Single Signal feed across SAST, DAST, pentests and cloud",
+  "Lifecycle workflows from detection to verified fix",
+  "Asset-centric view across apps, APIs, mobile, code and network",
 ];
 
 export type HowItWorksStep = {
@@ -40,23 +40,30 @@ export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
   {
     id: 1,
     label: "Step 1",
-    title: "Drop your raw media & pick a template",
+    title: "Connect tools, repos and assets",
     description:
-      "Upload long-form content or clips, then choose a high-performing template optimized for your target platform.",
+      "Hook up scanners, CI/CD, code hosting, cloud and network inventory so seqrity.ai can see your application surface in one place.",
   },
   {
     id: 2,
     label: "Step 2",
-    title: "Let the AI auto-cut, caption & brand",
+    title: "Normalize findings into Signals",
     description:
-      "Our AI detects key hooks, generates motion captions, applies your brand kit and maps placeholders automatically.",
+      "seqrity.ai ingests findings from SAST, DAST, SCA, pentests and custom sources, deduplicates noise and turns them into prioritized Signals with severity and state.",
   },
   {
     id: 3,
     label: "Step 3",
-    title: "Review, tweak, and auto-publish",
+    title: "Triage and assign with full context",
     description:
-      "Adjust timelines, scenes, overlays and then auto-schedule to YouTube, TikTok, Reels, Shorts, and more.",
+      "Work from a single Signal queue that ties each finding back to assets, endpoints, code refs and owners so AppSec, DevSecOps and engineers can act quickly.",
+  },
+  {
+    id: 4,
+    label: "Step 4",
+    title: "Automate workflows with the Marketplace",
+    description:
+      "Extend seqrity.ai with marketplace tools, agent-like workflows and automations that sync status, create tickets and verify fixes across workspaces.",
   },
 ];
 
@@ -70,61 +77,47 @@ export type FeatureCard = {
 
 export const FEATURE_CARDS: FeatureCard[] = [
   {
-    id: "template-engine",
-    name: "AI Template Engine",
+    id: "unified-signals",
+    name: "Unified Signals feed",
     description:
-      "Generate on-brand video layouts in seconds using reusable, parameterized templates.",
+      "Ingest and normalize findings from scanners, pentests and cloud sources into a single Signal queue with severity, state and ownership.",
     icon: "sparkles",
-    badge: "Adaptive",
+    badge: "Noise-aware",
   },
   {
-    id: "motion-captioning",
-    name: "Motion Captioning",
+    id: "asset-visibility",
+    name: "Asset-centric visibility",
     description:
-      "Dynamic, kinetic typography that syncs to speech and music with no manual keyframes.",
-    icon: "type",
-  },
-  {
-    id: "transcription",
-    name: "Studio-Grade Transcription",
-    description:
-      "High-accuracy, multilingual transcripts ready for captions, blogs and show notes.",
-    icon: "audioWaveform",
-  },
-  {
-    id: "placeholder-automation",
-    name: "Placeholder Automation",
-    description:
-      "Smart placeholders auto-detect where to place b-roll, emojis, CTAs and overlays.",
-    icon: "squareStack",
-  },
-  {
-    id: "voiceover",
-    name: "AI Voiceover Studio",
-    description:
-      "Generate ultra-natural voices, cloned from yours or picked from our premium library.",
-    icon: "mic",
-  },
-  {
-    id: "audio-mixing",
-    name: "Smart Audio Mixing",
-    description:
-      "Automatic loudness normalization, ducking and EQ tuned for every platform.",
-    icon: "sliders",
-  },
-  {
-    id: "multi-canvas",
-    name: "Multi-Canvas Output",
-    description:
-      "Render 9:16, 16:9, 1:1 and more simultaneously with smart framing and cropping.",
+      "View risk by asset across web apps, APIs, mobile, source code, hosts and locations, with Signals tied back to endpoints and git references.",
     icon: "panelsTopLeft",
   },
   {
-    id: "auto-posting",
-    name: "Auto Posting & Scheduling",
+    id: "lifecycle-workflow",
+    name: "Finding lifecycle & workflow",
     description:
-      "Approve once and auto-distribute to all connected channels with AI-written titles.",
-    icon: "send",
+      "Model the full lifecycle of a finding from open to mitigated, deferred or closed with states, assignments, SLAs and reviews across teams.",
+    icon: "sliders",
+  },
+  {
+    id: "marketplace-automation",
+    name: "Marketplace & automation",
+    description:
+      "Browse and deploy security tools, integrations and agent-like workflows from the built-in Marketplace without custom engineering.",
+    icon: "squareStack",
+  },
+  {
+    id: "multi-workspace",
+    name: "Multi-workspace & roles",
+    description:
+      "Segment tenants, environments or business units with workspaces and roles for admins, resources and end users, all on one platform.",
+    icon: "users",
+  },
+  {
+    id: "security-analytics",
+    name: "Security posture analytics",
+    description:
+      "Track open vs closed Signals, MTTR, risk by severity and asset type with exec-ready dashboards and workspace-level reporting.",
+    icon: "lineChart",
   },
 ];
 
@@ -143,40 +136,71 @@ export type TemplateItem = {
 
 export const TEMPLATE_GALLERY: TemplateItem[] = [
   {
-    id: "hook-reel",
-    label: "Hook-First Reel",
-    category: "Short-form",
-    duration: "0:20",
+    id: "severity-heatmap",
+    label: "Severity heatmap",
+    category: "Signals overview",
+    duration: "Real-time",
+    description:
+      "Visualize how many Signals sit in Info, Low, Medium, High and Critical across workspaces.",
+    aspect: "Dashboard",
+    channels: "All workspaces",
+    automationTag: "Live posture",
+    badge: "Exec-ready",
   },
   {
-    id: "talking-head",
-    label: "Talking Head Clips",
-    category: "Thought leadership",
-    duration: "0:45",
+    id: "mttr-trend",
+    label: "MTTR over time",
+    category: "Remediation analytics",
+    duration: "Last 90 days",
+    description:
+      "Track mean time to remediate by severity so AppSec and Eng leaders can align on SLAs.",
+    aspect: "Line chart",
+    channels: "Signals lifecycle",
+    automationTag: "Trend analysis",
   },
   {
-    id: "podcast-carousel",
-    label: "Podcast Carousel",
-    category: "Multi-clip",
-    duration: "1:00",
+    id: "coverage-by-asset",
+    label: "Coverage by asset type",
+    category: "Asset coverage",
+    duration: "Snapshot",
+    description:
+      "See how well web apps, APIs, mobile apps, code repos and network locations are covered by testing.",
+    aspect: "Grid",
+    channels: "Apps · APIs · Mobile · Network",
+    automationTag: "Surface mapping",
   },
   {
-    id: "product-showcase",
-    label: "Product Showcase",
-    category: "E-commerce",
-    duration: "0:30",
+    id: "workflow-throughput",
+    label: "Workflow throughput",
+    category: "Operations",
+    duration: "Rolling 30 days",
+    description:
+      "Understand how many Signals were opened, triaged, mitigated and closed to spot bottlenecks.",
+    aspect: "Bars",
+    channels: "Teams & workspaces",
+    automationTag: "Ops telemetry",
   },
   {
-    id: "comparison-split",
-    label: "Before/After Split",
-    category: "Transformations",
-    duration: "0:25",
+    id: "sla-breaches",
+    label: "SLA breaches",
+    category: "Risk & compliance",
+    duration: "Current period",
+    description:
+      "Highlight Signals approaching or breaching SLA so teams can prioritize before audits.",
+    aspect: "Table",
+    channels: "Critical & High",
+    automationTag: "Exception focus",
   },
   {
-    id: "facecam-gaming",
-    label: "Facecam Gaming Highlight",
-    category: "Gaming",
-    duration: "0:40",
+    id: "exec-summary",
+    label: "Executive summary",
+    category: "Reporting",
+    duration: "Quarter",
+    description:
+      "Summarize posture, coverage and trends into a single view to brief executives and customers.",
+    aspect: "Summary",
+    channels: "Stakeholders",
+    automationTag: "Shareable view",
   },
 ];
 
@@ -191,40 +215,49 @@ export type ComparisonProduct = {
 
 export const COMPARISON_PRODUCTS: ComparisonProduct[] = [
   {
-    name: "CapCut",
+    name: "Isolated scanner dashboards",
     metrics: [
-      { category: "AI templating", value: "Basic" },
-      { category: "Automation", value: "Manual-heavy" },
-      { category: "Brand systems", value: "Limited" },
-      { category: "Multi-canvas", value: "Partial" },
+      { category: "Unified Signals", value: "Per-tool views only" },
+      { category: "Finding lifecycle", value: "Basic statuses" },
+      { category: "Asset coverage", value: "Scoped to a single surface" },
+      { category: "Automation & AI", value: "Limited or none" },
     ],
   },
   {
-    name: "Canva",
+    name: "Ticket queues & spreadsheets",
     metrics: [
-      { category: "AI templating", value: "Static-first" },
-      { category: "Automation", value: "Low" },
-      { category: "Brand systems", value: "Strong" },
-      { category: "Multi-canvas", value: "Manual resize" },
+      { category: "Unified Signals", value: "Manually stitched data" },
+      { category: "Finding lifecycle", value: "Ad-hoc, hard to audit" },
+      { category: "Asset coverage", value: "No live view" },
+      { category: "Automation & AI", value: "Manual updates" },
     ],
   },
   {
-    name: "VEED",
+    name: "Legacy GRC tools",
     metrics: [
-      { category: "AI templating", value: "Moderate" },
-      { category: "Automation", value: "Some" },
-      { category: "Brand systems", value: "Basic" },
-      { category: "Multi-canvas", value: "Available" },
+      { category: "Unified Signals", value: "High-level, not tool-native" },
+      { category: "Finding lifecycle", value: "Process-heavy workflows" },
+      { category: "Asset coverage", value: "Static inventories" },
+      { category: "Automation & AI", value: "Slow to extend" },
     ],
   },
   {
-    name: "Our Product",
+    name: "seqrity.ai",
     isOurProduct: true,
     metrics: [
-      { category: "AI templating", value: "Generative & adaptive" },
-      { category: "Automation", value: "End-to-end" },
-      { category: "Brand systems", value: "Global, multi-workspace" },
-      { category: "Multi-canvas", value: "Parallel renders" },
+      { category: "Unified Signals", value: "Single, normalized Signal feed" },
+      {
+        category: "Finding lifecycle",
+        value: "Lifecycle-aware workflows & SLAs",
+      },
+      {
+        category: "Asset coverage",
+        value: "Apps, APIs, mobile, code, hosts & locations",
+      },
+      {
+        category: "Automation & AI",
+        value: "Marketplace, agents & workflow automations",
+      },
     ],
   },
 ];
@@ -239,24 +272,24 @@ export type DemoState = {
 export const DEMO_STATES: DemoState[] = [
   {
     id: "before",
-    label: "Before AI",
+    label: "Before seqrity.ai",
     description:
-      "Manual timelines, static captions, scattered brand assets and hours of exports.",
+      "Multiple scanner dashboards, spreadsheets and ticket queues with no single source of truth.",
     metrics: [
-      "3–5 hours per video",
-      "Manual cropping for each platform",
-      "Inconsistent sound levels",
+      "Hours spent reconciling findings every week",
+      "Separate views for code, apps, APIs and network",
+      "Hard to prove posture to leadership and auditors",
     ],
   },
   {
     id: "after",
-    label: "After AI",
+    label: "With seqrity.ai",
     description:
-      "Template-driven workflows, auto captions, voiceover and one-click multi-canvas.",
+      "One Signals feed, asset-aware views and workflows that automate status, ownership and verification.",
     metrics: [
-      "8–12 minutes per video",
-      "Auto-resized for every channel",
-      "Smart-mixed, platform-ready audio",
+      "Minutes to understand posture across workspaces",
+      "Shared context between AppSec, DevSecOps and Eng",
+      "Audit-ready view of lifecycle and SLA performance",
     ],
   },
 ];
@@ -270,44 +303,46 @@ export type UseCase = {
 
 export const USE_CASES: UseCase[] = [
   {
-    id: "podcasters",
-    label: "Podcasters",
-    description: "Turn each episode into a week of channel-native clips.",
-    icon: "podcast",
-  },
-  {
-    id: "creators",
-    label: "Creators",
+    id: "appsec-teams",
+    label: "Application security teams",
     description:
-      "Ship consistent, on-brand content across YouTube, Shorts, Reels and TikTok.",
-    icon: "camera",
+      "Unify scanner outputs, coordinate triage and track remediation SLAs across product lines.",
+    icon: "shield",
   },
   {
-    id: "agencies",
-    label: "Agencies",
-    description: "Scale client deliverables with reusable, AI-powered templates.",
+    id: "devsecops",
+    label: "DevSecOps & platform",
+    description:
+      "Embed Signals into CI/CD, route findings to the right owners and automate status syncs.",
+    icon: "pipeline",
+  },
+  {
+    id: "security-ops",
+    label: "Security operations",
+    description:
+      "Monitor application-layer risk alongside infrastructure, with clear ownership and workflows.",
+    icon: "radar",
+  },
+  {
+    id: "eng-leaders",
+    label: "Engineering leadership",
+    description:
+      "Get an at-a-glance view of risk, remediation throughput and posture trends for your portfolio.",
+    icon: "barChart",
+  },
+  {
+    id: "mssp",
+    label: "MSSPs & service providers",
+    description:
+      "Operate multi-tenant workspaces, standardize workflows and give clients read-only access.",
     icon: "briefcase",
   },
   {
-    id: "real-estate",
-    label: "Real estate",
+    id: "compliance",
+    label: "Risk & compliance",
     description:
-      "Auto-generate listing tours with overlays, maps and dynamic CTAs.",
-    icon: "building",
-  },
-  {
-    id: "ecommerce",
-    label: "E-commerce",
-    description:
-      "Create scroll-stopping product explainers from your existing assets.",
-    icon: "shoppingBag",
-  },
-  {
-    id: "startups",
-    label: "Startups",
-    description:
-      "Ship launch videos, feature drops and investor updates effortlessly.",
-    icon: "rocket",
+      "Evidence coverage and lifecycle history for audits, certifications and customer due diligence.",
+    icon: "fileCheck",
   },
 ];
 
@@ -324,50 +359,50 @@ export type PricingPlan = {
 
 export const PRICING_PLANS: PricingPlan[] = [
   {
-    id: "free",
-    name: "Free",
+    id: "starter",
+    name: "Starter",
     price: "$0",
     cadence: "/mo",
-    tagline: "Test the AI workflow on a few projects.",
-    ctaLabel: "Start free",
+    tagline: "Evaluate seqrity.ai with a single workspace and limited Signals.",
+    ctaLabel: "Get started",
     features: [
-      "3 exports / month",
-      "Watermarked videos",
-      "Starter template library",
-      "Basic transcription",
+      "Single workspace",
+      "Limited Signals per month",
+      "Core Signals feed & asset views",
+      "Basic dashboards",
     ],
   },
   {
-    id: "pro",
-    name: "Pro",
-    price: "$299",
-    cadence: "/mo",
-    tagline: "For solo creators shipping content every week.",
+    id: "team",
+    name: "Team",
+    price: "Talk to us",
+    cadence: "",
+    tagline: "For product security and DevSecOps teams rolling out seqrity.ai.",
     highlighted: true,
-    ctaLabel: "Upgrade to Pro",
+    ctaLabel: "Book a demo",
     features: [
-      "Unlimited projects",
-      "Full template gallery",
-      "AI motion captions & voiceover",
-      "Multi-canvas renders",
-      "Auto posting to major platforms",
-      "Priority rendering queue",
+      "Multiple workspaces",
+      "Full Signals lifecycle workflows",
+      "Role-based access control",
+      "Security posture & SLA dashboards",
+      "Access to Marketplace & automations",
+      "Priority support",
     ],
   },
   {
-    id: "business",
-    name: "Business",
-    price: "$499",
-    cadence: "/mo",
-    tagline: "For teams, agencies and production studios.",
-    ctaLabel: "Talk to sales",
+    id: "enterprise",
+    name: "Enterprise",
+    price: "Custom",
+    cadence: "",
+    tagline: "For organizations standardizing application security operations.",
+    ctaLabel: "Contact sales",
     features: [
-      "Everything in Pro",
-      "Workspace & roles",
-      "Brand kits & presets",
-      "Shared template libraries",
-      "Custom export presets",
-      "Dedicated success manager",
+      "Enterprise SSO & advanced RBAC",
+      "Custom data retention & residency",
+      "Dedicated workspace topology",
+      "Custom integrations & workflows",
+      "Onboarding & migration support",
+      "Dedicated success team",
     ],
   },
 ];
@@ -383,46 +418,51 @@ export type Testimonial = {
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    id: "creator-1",
-    name: "Alex Rivera",
-    role: "YouTube Creator",
-    company: "@alexbuilds",
+    id: "ciso-1",
+    name: "Dana Patel",
+    role: "CISO",
+    company: "Growthline Commerce",
     quote:
-      "We turned a backlog of 40 unedited videos into a month of channel-ready clips in a single weekend.",
-    avatarInitials: "AR",
+      "seqrity.ai gave us, for the first time, a single view of application risk. My team stopped reconciling CSVs and started driving down MTTR.",
+    avatarInitials: "DP",
   },
   {
-    id: "agency-1",
-    name: "Morgan Lee",
-    role: "Founder",
-    company: "Studio Loop Agency",
+    id: "head-appsec-1",
+    name: "Michael Yang",
+    role: "Head of Application Security",
+    company: "Northwind Bank",
     quote:
-      "Our editors now focus on creative direction instead of repetitive timeline work. Clients notice the difference.",
-    avatarInitials: "ML",
+      "Signals let us prioritize the 5% of findings that actually matter. Engineers get clear, asset-aware context instead of generic scanner dumps.",
+    avatarInitials: "MY",
   },
   {
-    id: "brand-1",
-    name: "Jamie Chen",
-    role: "Head of Content",
-    company: "Northline Commerce",
+    id: "vp-eng-1",
+    name: "Sarah Lopez",
+    role: "VP Engineering",
+    company: "Arcadia Labs",
     quote:
-      "We finally have a predictable, repeatable workflow for launching campaigns across every channel at once.",
-    avatarInitials: "JC",
+      "We finally have a shared language between security and engineering. seqrity.ai turned audits from a fire drill into a predictable process.",
+    avatarInitials: "SL",
   },
 ];
 
 export const FOOTER_LINKS: { label: string; href: string }[] = [
-  { label: "Product", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Changelog", href: "#" },
-  { label: "Status", href: "#" },
-  { label: "Security", href: "#" },
-  { label: "Docs", href: "#" },
+  { label: "Product overview", href: "/#how-it-works" },
+  { label: "Posture & analytics", href: "/#analytics" },
+  { label: "Security & trust", href: "/security" },
+  { label: "Privacy policy", href: "/privacy" },
+  { label: "Terms of use", href: "/terms" },
+  { label: "Cookies", href: "/cookies" },
+  { label: "Data processing addendum", href: "/data-processing" },
+  { label: "Acceptable use", href: "/acceptable-use" },
+  { label: "Contact us", href: "/contact" },
+  { label: "Contact sales", href: "/contact-sales" },
+  { label: "Support & complaints", href: "/support" },
 ];
 
 export const SOCIAL_LINKS: { label: string; href: string }[] = [
-  { label: "Twitter", href: "#" },
-  { label: "YouTube", href: "#" },
-  { label: "Discord", href: "#" },
-  { label: "TikTok", href: "#" },
+  { label: "LinkedIn", href: "#" },
+  { label: "GitHub", href: "#" },
+  { label: "X (Twitter)", href: "#" },
+  { label: "Email", href: "#" },
 ];

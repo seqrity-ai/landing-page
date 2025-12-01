@@ -35,22 +35,18 @@ const MotionFeatureCard = motion.article as React.ComponentType<any>;
 
 function FeatureIcon({ id }: { id: string }) {
   const label =
-    id === "template-engine"
-      ? "AI"
-      : id === "motion-captioning"
-      ? "CC"
-      : id === "transcription"
-      ? "TX"
-      : id === "placeholder-automation"
-      ? "FX"
-      : id === "voiceover"
-      ? "VO"
-      : id === "audio-mixing"
-      ? "MX"
-      : id === "multi-canvas"
-      ? "9:16"
-      : id === "auto-posting"
-      ? "↗"
+    id === "unified-signals"
+      ? "SF"
+      : id === "asset-visibility"
+      ? "AV"
+      : id === "lifecycle-workflow"
+      ? "WF"
+      : id === "marketplace-automation"
+      ? "MP"
+      : id === "multi-workspace"
+      ? "WS"
+      : id === "security-analytics"
+      ? "AN"
       : "•";
 
   return (
@@ -75,9 +71,9 @@ export function FeaturesSection() {
           viewport={{ once: true, margin: "0px 0px -120px" }}
         >
           <SectionHeader
-            eyebrow="Features"
-            title="Everything you need to ship channel-native video at scale."
-            description="From template logic to captions, voiceover and multi-canvas renders, the stack is built for teams who treat video as a system—not one‑off edits."
+            eyebrow="Platform capabilities"
+            title="Everything you need to run application security operations."
+            description="From unified Signals to workflows, asset views and analytics, seqrity.ai is built for teams who treat AppSec as an operating system—not one‑off scans."
           />
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -118,7 +114,7 @@ export function FeaturesSection() {
                   <div className="mt-auto flex items-center justify-between pt-2 text-[0.65rem] text-slate-400">
                     <span className="inline-flex items-center gap-1">
                       <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-primary to-secondary" />
-                      <span className="numeric">Template-ready</span>
+                      <span className="numeric">Signal-aware</span>
                     </span>
                     <span className="inline-flex items-center gap-1 text-slate-500">
                       <span className="h-1 w-4 rounded-full bg-slate-700/80" />

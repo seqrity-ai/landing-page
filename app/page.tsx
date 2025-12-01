@@ -1,4 +1,5 @@
 import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import { HeroSection } from "@/sections/hero-section";
 import { HowItWorksSection } from "@/sections/how-it-works-section";
 import { FeaturesSection } from "@/sections/features-section";
@@ -26,6 +27,7 @@ export default function Page() {
         <TestimonialsSection />
         <FinalCtaSection />
       </div>
+      <SiteFooter />
     </>
   );
 }
