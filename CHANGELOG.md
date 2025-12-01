@@ -37,3 +37,6 @@
 ## 2025-12-01
 - Font sizing tweak (7efd593)
 
+## 2025-12-01
+- Font sizing tweak (acbedc5)
+

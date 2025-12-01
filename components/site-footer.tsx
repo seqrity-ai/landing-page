@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SITE, FOOTER_LINKS, SOCIAL_LINKS } from "@/constants/site";
+import { SITE, FOOTER_LINKS } from "@/constants/site";
 import { cn } from "@/lib/utils";
 
 export function SiteFooter() {
