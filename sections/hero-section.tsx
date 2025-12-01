@@ -431,15 +431,16 @@ export function HeroSection() {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
-              <Button
-                variant="secondary"
-                size="lg"
-                className="gap-2"
-                aria-label={SITE.secondaryCTA}
-              >
-                <Play className="h-4 w-4" />
-                <span>{SITE.secondaryCTA}</span>
-              </Button>
+              <Link href="/tour" aria-label={SITE.secondaryCTA}>
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="gap-2"
+                >
+                  <Play className="h-4 w-4" />
+                  <span>{SITE.secondaryCTA}</span>
+                </Button>
+              </Link>
             </div>
 
             <div className="flex items-center gap-3 text-sm text-slate-300">

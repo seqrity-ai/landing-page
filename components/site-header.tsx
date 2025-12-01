@@ -121,15 +121,16 @@ export function SiteHeader() {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
-          <Button
-            variant="secondary"
-            size="sm"
-            className="gap-1.5"
-            aria-label={SITE.secondaryCTA}
-          >
-            <Play className="h-3.5 w-3.5" />
-            <span className="whitespace-nowrap">{SITE.secondaryCTA}</span>
-          </Button>
+          <Link href="/tour" aria-label={SITE.secondaryCTA}>
+            <Button
+              variant="secondary"
+              size="sm"
+              className="gap-1.5"
+            >
+              <Play className="h-3.5 w-3.5" />
+              <span className="whitespace-nowrap">{SITE.secondaryCTA}</span>
+            </Button>
+          </Link>
           <Link href="/book-demo" aria-label={SITE.primaryCTA}>
             <Button
               size="sm"
@@ -203,17 +204,19 @@ export function SiteHeader() {
             {/* CTAs pinned to bottom */}
             <div className="border-t border-slate-800/70 px-4 py-3">
               <div className="flex flex-col gap-2">
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  fullWidth
-                  className="gap-1.5"
-                >
-                  <Play className="h-3.5 w-3.5" />
-                  <span className="whitespace-nowrap">
-                    {SITE.secondaryCTA}
-                  </span>
-                </Button>
+                <Link href="/tour">
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    fullWidth
+                    className="gap-1.5"
+                  >
+                    <Play className="h-3.5 w-3.5" />
+                    <span className="whitespace-nowrap">
+                      {SITE.secondaryCTA}
+                    </span>
+                  </Button>
+                </Link>
                 <Link href="/book-demo">
                   <Button size="sm" fullWidth className="gap-1.5">
                     <span className="whitespace-nowrap">

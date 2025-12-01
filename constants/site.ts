@@ -392,7 +392,8 @@ export const PRICING_PLANS: PricingPlan[] = [
   {
     id: "enterprise",
     name: "Enterprise",
-    price: "Custom",
+    price: "Talk to us",
+
     cadence: "",
     tagline: "For organizations standardizing application security operations.",
     ctaLabel: "Contact sales",
