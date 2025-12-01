@@ -86,7 +86,7 @@ function HeroTemplateStack() {
 
   return (
     <MotionCardDiv
-      className="relative aspect-[16/10] w-full max-w-xl rounded-[1.5rem] border border-white/10 bg-slate-900/70 p-4 sm:p-5 md:p-6 shadow-soft-elevated overflow-hidden hero-bg"
+      className="relative aspect-[16/10] w-full max-w-2xl md:max-w-[640px] lg:max-w-[700px] rounded-[1.5rem] border border-white/10 bg-slate-900/70 p-4 sm:p-5 md:p-6 shadow-soft-elevated overflow-hidden hero-bg"
       variants={cardFloatVariants}
       initial="initial"
       animate="animate"
@@ -378,7 +378,7 @@ export function HeroSection() {
       className="relative overflow-hidden pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-24"
       aria-labelledby="hero-heading"
     >
-      <div className="app-container grid min-h-[calc(100vh-4.5rem)] items-center gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+      <div className="app-container grid min-h-[calc(100vh-4.5rem)] items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.15fr)]">
         <motion.div
           className="space-y-6 sm:space-y-7"
           variants={containerVariants}

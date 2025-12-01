@@ -48,8 +48,8 @@ export function TestimonialsSection() {
         >
           <SectionHeader
             eyebrow="Customers"
-            title="Teams that treat video like a system, not a one-off task."
-            description="Creators, agencies and brands plug into the same AI timeline engine—and ship more, with fewer manual passes."
+            title="Teams that treat application security as a system, not scattered tools."
+            description="AppSec, DevSecOps and engineering leaders plug into one unified Signals feed—so they can act faster, prove posture and spend less time reconciling dashboards."
           />
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">

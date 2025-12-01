@@ -6,12 +6,12 @@ import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/section-header";
 import { USE_CASES } from "@/constants/site";
 import {
-  Podcast,
-  Video,
+  Shield,
+  Radar,
+  GitBranch,
+  Users,
   BriefcaseBusiness,
-  Building2,
-  ShoppingBag,
-  Rocket,
+  FileCheck,
 } from "lucide-react";
 
 const sectionVariants = {
@@ -45,20 +45,20 @@ function UseCaseIcon({ id }: { id: string }) {
     "h-5 w-5 text-secondary drop-shadow-[0_0_15px_rgba(10,226,255,0.5)]";
 
   switch (id) {
-    case "podcasters":
-      return <Podcast className={className} />;
-    case "creators":
-      return <Video className={className} />;
-    case "agencies":
+    case "appsec-teams":
+      return <Shield className={className} />;
+    case "devsecops":
+      return <GitBranch className={className} />;
+    case "security-ops":
+      return <Radar className={className} />;
+    case "eng-leaders":
+      return <Users className={className} />;
+    case "mssp":
       return <BriefcaseBusiness className={className} />;
-    case "real-estate":
-      return <Building2 className={className} />;
-    case "ecommerce":
-      return <ShoppingBag className={className} />;
-    case "startups":
-      return <Rocket className={className} />;
+    case "compliance":
+      return <FileCheck className={className} />;
     default:
-      return <Video className={className} />;
+      return <Shield className={className} />;
   }
 }
 
@@ -78,8 +78,8 @@ export function UseCasesSection() {
         >
           <SectionHeader
             eyebrow="Who it's for"
-            title="Built for every team that lives on video."
-            description="From creators to agencies and growth teams, ship recurring, channel-native content without rebuilding timelines from scratch."
+            title="Built for teams running modern application security programs."
+            description="From AppSec and DevSecOps to security operations, engineering and compliance, seqrity.ai gives every team a single Signals view tailored to how they work."
           />
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -110,7 +110,7 @@ export function UseCasesSection() {
                     </div>
                     <span className="mt-1 inline-flex items-center rounded-full border border-slate-800/80 bg-slate-950/80 px-2 py-0.5 text-[0.6rem] text-slate-400">
                       <span className="mr-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.9)]" />
-                      Scales with templates
+                      Scales with workspaces
                     </span>
                   </div>
 
@@ -121,7 +121,7 @@ export function UseCasesSection() {
                   <div className="mt-auto flex items-center justify-between pt-1 text-[0.65rem] text-slate-400">
                     <span className="inline-flex items-center gap-1">
                       <span className="h-1 w-1.5 rounded-full bg-secondary" />
-                      <span className="numeric">Channel-native formats</span>
+                      <span className="numeric">Signal-native workflows</span>
                     </span>
                     <span className="inline-flex items-center gap-1 text-slate-500">
                       <span className="h-3 w-3 rounded-[4px] border border-slate-700/80 bg-slate-900/80" />

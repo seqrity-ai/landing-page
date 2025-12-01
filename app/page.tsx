@@ -17,10 +17,14 @@ export default function Page() {
       <SiteHeader />
       <div className="app-page space-y-20 md:space-y-24 lg:space-y-28">
         <HeroSection />
-        <TemplateGallerySection />
+        {/* Product: how it works */}
         <HowItWorksSection />
         <FeaturesSection />
+        {/* Why seqrity */}
         <ComparisonSection />
+        {/* Analytics / posture views */}
+        <TemplateGallerySection />
+        {/* Use cases, pricing & social proof */}
         <DemoSection />
         <UseCasesSection />
         <PricingSection />

@@ -65,18 +65,18 @@ export function FinalCtaSection() {
             <div className="max-w-xl space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full border border-slate-700/70 bg-slate-950/80 px-3 py-1 text-[0.7rem] uppercase tracking-[0.18em] text-secondary">
                 <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-primary to-secondary shadow-[0_0_16px_rgba(109,93,246,0.9)]" />
-                <span className="numeric">Ready when your next video is</span>
+                <span className="numeric">Ready when your next Signal hits</span>
               </div>
               <h2
                 id="final-cta-heading"
                 className="text-balance text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl"
               >
-                Turn your raw footage into a channel-native system.
+                Run application security on Signals, not siloed tools.
               </h2>
               <p className="max-w-lg text-sm text-slate-300 sm:text-[0.95rem]">
-                Plug {SITE.appName} into your existing recording workflow and let
-                templates, captions, voiceover and multi-canvas exports handle
-                the repetitive edits in the background.
+                Plug {SITE.appName} into your scanners, code, cloud and ticketing tools so
+                every noisy finding is normalized into a Signal with owners, SLAs
+                and a clear lifecycle from discovery to verified fix.
               </p>
             </div>
 

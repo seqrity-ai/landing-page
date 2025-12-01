@@ -452,6 +452,7 @@ export const FOOTER_LINKS: { label: string; href: string }[] = [
   { label: "Security & trust", href: "/security" },
   { label: "Privacy policy", href: "/privacy" },
   { label: "Terms of use", href: "/terms" },
+  { label: "Legal & copyright", href: "/legal" },
   { label: "Cookies", href: "/cookies" },
   { label: "Data processing addendum", href: "/data-processing" },
   { label: "Acceptable use", href: "/acceptable-use" },

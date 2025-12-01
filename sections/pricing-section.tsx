@@ -49,8 +49,8 @@ export function PricingSection() {
         >
           <SectionHeader
             eyebrow="Pricing"
-            title="Pick a plan that scales with your content system."
-            description="Start free, then graduate into a workflow where templates, timelines and channels all stay in sync."
+            title="Pick a plan that scales with your Signals and AppSec program."
+            description="Start with a single workspace, then grow into multi-team, multi-workspace application security operations—while keeping Signals, workflows and posture analytics in one place."
           />
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">

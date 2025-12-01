@@ -40,13 +40,21 @@ export function SiteHeader() {
   React.useEffect(() => {
     if (typeof window === "undefined") return;
 
+    // Observe the hero section as well as in-page nav sections.
+    // When the hero is the most visible, we clear the active nav highlight.
+    const hero = document.getElementById("hero");
+
     const sectionIds = NAV_LINKS.map((link) => {
       const hashIndex = link.href.indexOf("#");
       return hashIndex >= 0 ? link.href.slice(hashIndex + 1) : "";
     }).filter(Boolean);
-    const sections = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean) as HTMLElement[];
+
+    const sections = [
+      ...(hero ? [hero] : []),
+      ...sectionIds
+        .map((id) => document.getElementById(id))
+        .filter(Boolean),
+    ] as HTMLElement[];
 
     if (sections.length === 0) return;
 
@@ -56,8 +64,15 @@ export function SiteHeader() {
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
-        if (visible[0]?.target.id) {
-          setActiveSection(`#${visible[0].target.id}`);
+        const top = visible[0];
+
+        if (top?.target.id) {
+          if (top.target.id === "hero") {
+            // At the very top: hero is dominant, so no nav item is active.
+            setActiveSection(null);
+          } else {
+            setActiveSection(`#${top.target.id}`);
+          }
         }
       },
       {

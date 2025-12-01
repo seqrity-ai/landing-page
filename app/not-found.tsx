@@ -6,11 +6,11 @@ export default function NotFound() {
           404 • Page not found
         </p>
         <h1 className="text-2xl sm:text-3xl font-semibold text-slate-50">
-          This page doesn't exist in your content system yet.
+          This page doesn't exist in seqrity.ai yet.
         </h1>
         <p className="max-w-md text-sm text-slate-400">
           The route you're looking for is missing or has been moved. Head back
-          to the main canvas to keep designing your social flows.
+          to the homepage to keep working from your unified Signals view.
         </p>
         <a
           href="/"

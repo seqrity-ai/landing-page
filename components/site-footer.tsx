@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SITE, FOOTER_LINKS, SOCIAL_LINKS } from "@/constants/site";
+import { cn } from "@/lib/utils";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
+  const pathname = usePathname();
 
   return (
     <footer className="border-t border-slate-800/70 bg-slate-950/95 mt-16">
@@ -45,7 +50,10 @@ export function SiteFooter() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="hover:text-slate-50 transition-colors"
+                      className={cn(
+                        "hover:text-slate-50 transition-colors",
+                        pathname === link.href && "text-slate-50 font-semibold"
+                      )}
                     >
                       {link.label}
                     </a>
@@ -86,7 +94,7 @@ export function SiteFooter() {
                   part of your broader program.
                 </li>
                 <li className="text-slate-500 text-[0.68rem]">
-                  This site content is illustrative and not legal advice.
+                  For detailed information, please refer to our Privacy, Security and Legal pages.
                 </li>
               </ul>
             </div>
@@ -98,8 +106,7 @@ export function SiteFooter() {
             &copy; {year} {SITE.appName}. All rights reserved.
           </p>
           <p className="text-slate-600">
-            seqrity.ai is a fictional marketing example for a DevSecOps and
-            application security operations platform.
+            seqrity.ai provides a unified DevSecOps and application security operations platform for security-conscious teams.
           </p>
         </div>
       </div>
