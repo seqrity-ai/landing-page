@@ -10,13 +10,13 @@ import { cn } from "@/lib/utils";
 function LogoMark() {
   return (
     <div className="inline-flex items-center gap-2">
-      <div className="h-7 w-7 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent shadow-glow-primary flex items-center justify-center">
-        <span className="numeric text-[0.65rem] text-slate-950 font-semibold">
-          AI
+      <div className="h-9 w-9 rounded-xl  from-primary via-secondary to-primary shadow-glow-primary flex items-center justify-center">
+        <span className="numeric text-[0.85rem] text-white-950 font-bold">
+          S
         </span>
       </div>
       <div className="flex flex-col leading-tight">
-        <span className="text-xs uppercase tracking-[0.22em] text-slate-200">
+        <span className="hidden lg:block text-s  tracking-[0.12em] text-slate-200 lowercase truncate">
           {SITE.appName}
         </span>
         {/* Show a shorter tagline only on larger screens to avoid header overflow */}

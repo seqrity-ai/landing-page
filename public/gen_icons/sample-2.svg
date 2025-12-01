@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- seqrity.ai S-shield outline logo -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 256 256"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">seqrity.ai S shield outline logo</title>
+  <desc id="desc">Minimal outline S shield for seqrity.ai</desc>
+
+  <!-- Background is transparent by default -->
+
+  <!-- Shield outer outline -->
+  <path
+    d="M128 16 40 60v72c0 60.5 38.7 113.3 88 124 49.3-10.7 88-63.5 88-124V60L128 16z"
+    fill="none"
+    stroke="#38bdf8"
+    stroke-width="6"
+    stroke-linejoin="round"
+  />
+
+  <!-- Shield inner outline -->
+  <path
+    d="M128 30 52 68v64c0 52.4 33.4 98.3 76 108 42.6-9.7 76-55.6 76-108V68L128 30z"
+    fill="none"
+    stroke="#4b5563"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
+
+  <!-- Stylized S outline -->
+  <path
+    d="M90 104
+       c0 -18 15 -32 38 -32
+       c17 0 30 6 38 18
+       l-10 4
+       c-6 -8 -15 -12 -28 -12
+       c-14 0 -24 7 -24 18
+       c0 10 7 16 22 19
+       l16 3
+       c22 4 32 13 32 28
+       c0 18 -14 30 -38 30
+       c-20 0 -34 -7 -42 -20
+       l9 -5
+       c5 10 15 15 31 15
+       c15 0 26 -7 26 -19
+       c0 -11 -7 -17 -23 -20
+       l-15 -3
+       C102 130 90 120 90 104z"
+    fill="none"
+    stroke="#38bdf8"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
