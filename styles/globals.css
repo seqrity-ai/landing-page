@@ -13,27 +13,27 @@
 */
 
 :root {
-  /* Softer, more eye-friendly dark theme */
-  --background: 222 47% 7%;
-  --foreground: 210 40% 96%;
+  /* Dark, high-contrast theme */
+  --background: 222 47% 11%; /* slate-900 */
+  --foreground: 210 40% 98%; /* slate-50 */
 
-  --muted: 220 35% 13%;
-  --muted-foreground: 215 20% 72%;
+  --muted: 215 25% 20%;
+  --muted-foreground: 215 20% 80%;
 
-  --border: 220 30% 22%;
-  --input: 220 30% 22%;
-  --ring: 239 84% 67%;
+  --border: 215 25% 30%;
+  --input: 215 25% 30%;
+  --ring: 222 84% 56%;
 
-  --card: 222 45% 9%;
-  --card-foreground: 210 40% 96%;
+  --card: 222 47% 13%;
+  --card-foreground: 210 40% 98%;
 
-  --popover: 222 47% 8%;
-  --popover-foreground: 210 40% 96%;
+  --popover: 222 47% 13%;
+  --popover-foreground: 210 40% 98%;
 
   /* Brand colors as HSL for flexibility if needed later */
-  --brand-primary: 239 84% 67%; /* #6366F1 (softer indigo) */
-  --brand-secondary: 189 92% 56%; /* #22D3EE (teal-cyan) */
-  --brand-accent: 334 84% 72%; /* #F472B6 (soft magenta) */
+  --brand-primary: 245 85% 65%; /* #6D5DF6 (Electric violet) */
+  --brand-secondary: 188 100% 55%; /* #0AE2FF (Cyan neon) */
+  --brand-accent: 302 96% 64%; /* #F54DFF (Magenta) */
 
   /* Radii */
   --radius-lg: 1.1rem;
@@ -65,11 +65,11 @@ body {
   font-family: var(--font-sans);
   /* Prevent horizontal scroll from decorative overflow */
   overflow-x: hidden;
-  /* Softer, more diffuse background glows */
+  /* Dark, high-contrast background gradient */
   background:
-    radial-gradient(circle at top left, rgba(99, 102, 241, 0.18), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(34, 211, 238, 0.14), transparent 55%),
-    radial-gradient(circle at top right, rgba(244, 114, 182, 0.12), transparent 60%),
+    radial-gradient(circle at top left, rgba(109, 93, 246, 0.22), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(245, 77, 255, 0.2), transparent 55%),
+    radial-gradient(circle at center, rgba(10, 226, 255, 0.06), transparent 55%),
     #020617;
   color: hsl(var(--foreground));
 }
@@ -92,8 +92,8 @@ body {
 *::-webkit-scrollbar-thumb {
   background: linear-gradient(
     180deg,
-    rgba(99, 102, 241, 0.7),
-    rgba(34, 211, 238, 0.7)
+    rgba(148, 163, 184, 0.7),
+    rgba(148, 163, 184, 0.4)
   );
   border-radius: 999px;
 }
@@ -114,23 +114,24 @@ body {
 
 /* Glassmorphism panels */
 .glass-panel {
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at top left,
-      rgba(99, 102, 241, 0.14),
+      rgba(109, 93, 246, 0.18),
       transparent 55%
     ),
     radial-gradient(
       circle at bottom right,
-      rgba(34, 211, 238, 0.12),
+      rgba(245, 77, 255, 0.16),
       transparent 55%
     ),
-    rgba(15, 23, 42, 0.9);
-  backdrop-filter: blur(22px);
+    rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(20px);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(148, 163, 184, 0.22);
+  border: 1px solid rgba(148, 163, 184, 0.5);
   box-shadow:
-    0 18px 60px rgba(15, 23, 42, 0.9),
-    0 0 26px rgba(15, 23, 42, 0.9);
+    0 22px 50px rgba(15, 23, 42, 0.5),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
 }
 
 /* Section spacing */
@@ -164,8 +165,8 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(109, 93, 246, 0.9),
-    rgba(10, 226, 255, 0.9),
+    rgba(37, 99, 235, 0.8),
+    rgba(236, 72, 153, 0.8),
     transparent
   );
   overflow: hidden;
@@ -178,7 +179,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(245, 77, 255, 0.9),
+    rgba(59, 130, 246, 0.9),
     transparent
   );
   animation: line-sweep 2.6s linear infinite;
@@ -186,11 +187,11 @@ body {
 
 /* Buttons – base styles; shadcn-like */
 .btn {
-  @apply inline-flex items-center justify-center rounded-pill px-4 py-2 text-xs sm:text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/80 focus-visible:ring-offset-slate-900;
+  @apply inline-flex items-center justify-center rounded-pill px-4 py-2 text-xs sm:text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/80 focus-visible:ring-offset-white;
 }
 
 .btn-primary {
-  @apply btn bg-primary text-primary-foreground shadow-glow-primary hover:shadow-[0_0_40px_rgba(109,93,246,0.8)] hover:bg-primary/90;
+  @apply btn bg-primary text-primary-foreground shadow-glow-primary hover:shadow-[0_0_40px_rgba(37,99,235,0.55)] hover:bg-primary/90;
   position: relative;
   overflow: hidden;
 }
@@ -230,30 +231,35 @@ body {
 
 /* Hero specific background helper */
 .hero-bg {
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle at top left,
-      rgba(99, 102, 241, 0.26),
+      rgba(109, 93, 246, 0.45),
       transparent 55%
     ),
     radial-gradient(
       circle at bottom right,
-      rgba(34, 211, 238, 0.2),
+      rgba(245, 77, 255, 0.35),
       transparent 55%
     ),
     radial-gradient(
       circle at center,
-      rgba(15, 23, 42, 0.96),
-      rgba(15, 23, 42, 0.99)
+      rgba(10, 226, 255, 0.12),
+      transparent 55%
+    ),
+    linear-gradient(
+      to bottom,
+      #020617,
+      #020617
     );
 }
 
 /* Mobile nav overlay background using theme colors */
 .nav-overlay-bg {
   background:
-    radial-gradient(circle at top left, rgba(99, 102, 241, 0.18), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(34, 211, 238, 0.14), transparent 55%),
-    radial-gradient(circle at top right, rgba(244, 114, 182, 0.12), transparent 60%),
-    #020617;
+    radial-gradient(circle at top left, rgba(109, 93, 246, 0.35), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(245, 77, 255, 0.28), transparent 55%),
+    rgba(2, 6, 23, 0.96);
 }
 
 /* Keyframes (mirrored from tailwind.config for non-utility usage) */
@@ -360,44 +366,7 @@ body {
   color: hsl(var(--muted-foreground));
 }
 
-/* Header: make it feel like a real nav bar */
-header.sticky {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  border-bottom: 1px solid rgba(30, 64, 175, 0.55);
-  background: rgba(2, 6, 23, 0.9);
-  backdrop-filter: blur(20px);
-}
-
-header.sticky .app-container {
-  height: 3.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-}
-
-/* Desktop nav */
-@media (min-width: 768px) {
-  header.sticky nav {
-    display: flex;
-    align-items: center;
-    gap: 2.25rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-
-  header.sticky nav a {
-    text-decoration: none;
-    color: rgba(203, 213, 225, 0.95);
-    position: relative;
-  }
-
-  header.sticky nav a:hover {
-    color: #f9fafb;
-  }
-}
+/* Header layout is handled via React component + Tailwind */
 
 /* Hero layout: text + visual split */
 #hero .app-container {
@@ -463,13 +432,13 @@ button.secondary-cta {
 }
 
 button.primary-cta {
-  background: linear-gradient(135deg, #6366f1, #22d3ee);
-  color: #020617;
-  box-shadow: 0 0 26px rgba(99, 102, 241, 0.6);
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: #f9fafb;
+  box-shadow: 0 0 26px rgba(37, 99, 235, 0.35);
 }
 
 button.secondary-cta {
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(15, 23, 42, 0.96);
   color: #e5e7eb;
   border: 1px solid rgba(148, 163, 184, 0.7);
 }
@@ -479,7 +448,7 @@ button.primary-cta:hover {
 }
 
 button.secondary-cta:hover {
-  background: rgba(15, 23, 42, 0.98);
+  background: rgba(15, 23, 42, 0.92);
 }
 
 /* Bullet list refinement under hero */
@@ -489,7 +458,19 @@ button.secondary-cta:hover {
 }
 
 #hero ul li {
-  background: rgba(15, 23, 42, 0.9);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(109, 93, 246, 0.24),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(245, 77, 255, 0.2),
+      transparent 55%
+    ),
+    rgba(15, 23, 42, 0.98);
   border-radius: 0.9rem;
-  border: 1px solid rgba(148, 163, 184, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  color: #e5e7eb;
 }

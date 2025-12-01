@@ -16,11 +16,11 @@ function LogoMark() {
         </span>
       </div>
       <div className="flex flex-col leading-tight">
-        <span className="text-xs uppercase tracking-[0.22em] text-slate-400">
+        <span className="text-xs uppercase tracking-[0.22em] text-slate-200">
           {SITE.appName}
         </span>
         {/* Show a shorter tagline only on larger screens to avoid header overflow */}
-        <span className="hidden lg:block max-w-[11rem] truncate text-[0.7rem] font-medium text-slate-100">
+        <span className="hidden lg:block max-w-[11rem] truncate text-[0.7rem] font-medium text-slate-400">
           {SITE.tagline}
         </span>
       </div>
@@ -72,14 +72,14 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950 shadow-[0_12px_40px_rgba(15,23,42,0.9)]">
+    <header className="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/95 backdrop-blur shadow-[0_12px_40px_rgba(15,23,42,0.9)]">
       <div className="app-container flex h-14 sm:h-16 items-center justify-between gap-3">
         <Link href="/" aria-label="Go to seqrity.ai home" className="inline-flex items-center gap-2">
           <LogoMark />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-medium">
+        <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-slate-300">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -96,7 +96,7 @@ export function SiteHeader() {
                 className={cn(
                   "h-[1px] bg-gradient-to-r from-primary to-secondary transition-all duration-200",
                   activeSection === getLinkHash(link.href)
-                    ? "w-6 shadow-[0_0_12px_rgba(94,234,212,0.8)]"
+                    ? "w-6"
                     : "w-0 group-hover:w-6"
                 )}
               />
@@ -174,7 +174,7 @@ export function SiteHeader() {
                     className={cn(
                       "flex items-center justify-between rounded-lg px-3 py-2 bg-slate-900 hover:bg-slate-800",
                       activeSection === getLinkHash(link.href) &&
-                        "border border-primary/40 shadow-[0_0_16px_rgba(94,234,212,0.4)]"
+                        "border border-primary/40 shadow-[0_0_16px_rgba(109,93,246,0.6)]"
                     )}
                     onClick={() => setIsOpen(false)}
                   >

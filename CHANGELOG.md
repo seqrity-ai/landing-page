@@ -25,3 +25,6 @@
 ## 2025-11-30
 - SEO friendly (bed7411)
 
+## 2025-12-01
+- snapshot: 0.0.1 (dec8b9a)
+

@@ -25,16 +25,16 @@ const config: Config = {
         popover: "hsl(var(--popover))",
         "popover-foreground": "hsl(var(--popover-foreground))",
         primary: {
-          DEFAULT: "#6366F1", // Softer indigo
-          foreground: "#FDFBFF",
+          DEFAULT: "#6D5DF6", // Electric violet
+          foreground: "#F9FAFF",
         },
         secondary: {
-          DEFAULT: "#22D3EE", // Teal-cyan
-          foreground: "#001018",
+          DEFAULT: "#0AE2FF", // Cyan neon
+          foreground: "#0B1120",
         },
         accent: {
-          DEFAULT: "#F472B6", // Soft magenta
-          foreground: "#170015",
+          DEFAULT: "#F54DFF", // Magenta accent
+          foreground: "#0B1120",
         },
         destructive: {
           DEFAULT: "#EF4444",
@@ -49,9 +49,9 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-gradient":
-          "radial-gradient(circle at top left, #6366F1 0, transparent 55%), radial-gradient(circle at bottom right, #22D3EE 0, transparent 55%)",
+          "radial-gradient(circle at top left, #2563EB 0, transparent 55%), radial-gradient(circle at bottom right, #EC4899 0, transparent 55%)",
         "surface-glass":
-          "linear-gradient(135deg, rgba(13, 13, 40, 0.9), rgba(10, 35, 58, 0.88))",
+          "linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(249, 250, 251, 0.96))",
       },
       borderRadius: {
         lg: "1.1rem",
@@ -60,9 +60,9 @@ const config: Config = {
         pill: "999px",
       },
       boxShadow: {
-        "glow-primary": "0 0 30px rgba(99, 102, 241, 0.55)",
-        "glow-secondary": "0 0 30px rgba(34, 211, 238, 0.5)",
-        "soft-elevated": "0 18px 60px rgba(0, 0, 0, 0.65)",
+        "glow-primary": "0 0 30px rgba(37, 99, 235, 0.45)",
+        "glow-secondary": "0 0 30px rgba(236, 72, 153, 0.4)",
+        "soft-elevated": "0 18px 40px rgba(15, 23, 42, 0.12)",
       },
       keyframes: {
         "float-soft": {

@@ -86,7 +86,7 @@ function HeroTemplateStack() {
 
   return (
     <MotionCardDiv
-      className="relative aspect-[5/4] w-full max-w-xl rounded-[1.5rem] border border-white/10 bg-slate-900/70 p-4 sm:p-5 md:p-6 shadow-soft-elevated overflow-hidden hero-bg"
+      className="relative aspect-[16/10] w-full max-w-xl rounded-[1.5rem] border border-white/10 bg-slate-900/70 p-4 sm:p-5 md:p-6 shadow-soft-elevated overflow-hidden hero-bg"
       variants={cardFloatVariants}
       initial="initial"
       animate="animate"
@@ -112,193 +112,225 @@ function HeroTemplateStack() {
         className="relative flex h-full w-full flex-col gap-3 sm:gap-4"
       >
         {/* Top bar */}
-        <div className="flex items-center justify-between rounded-xl border border-slate-700/70 bg-slate-900/80 px-3.5 py-3">
+        <div className="flex items-center justify-between rounded-xl border border-slate-700/70 bg-slate-950/90 px-3.5 py-3">
           <div className="flex items-center gap-2">
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-[0.6rem] font-semibold text-slate-950 shadow-glow-primary">
               AI
             </span>
             <div className="flex flex-col">
               <span className="text-[0.7rem] uppercase tracking-[0.22em] text-slate-400">
-                Signals
+                Signal Atlas
               </span>
               <span className="text-xs text-slate-100">
-                Workspace · Production
+                Unified Signals · Production
               </span>
             </div>
           </div>
-          <div className="flex items-center gap-1.5 text-[0.7rem] text-slate-300">
+          <div className="flex items-center gap-2 text-[0.7rem] text-slate-300">
             <Sparkles className="h-3.5 w-3.5 text-secondary" />
-            <span className="numeric">Signals being normalized</span>
+            <span className="numeric">1243 signals · 87 assets</span>
           </div>
         </div>
 
-        {/* Middle layout: large central canvas, timeline, right sidebar */}
-        <div className="grid flex-1 grid-cols-[minmax(0,1.8fr)_minmax(0,1.1fr)] gap-3 sm:gap-4">
-          {/* Center editor area */}
-          <div className="relative flex flex-col gap-3 rounded-2xl border border-slate-700/70 bg-slate-900/80 p-3 sm:p-4 overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(109,93,246,0.35),transparent_55%)] opacity-80" />
-            <div className="relative flex h-full flex-col gap-3">
-              {/* Template meta */}
-              <div className="flex items-center justify-between text-xs">
-                <span className="inline-flex items-center gap-1 rounded-full bg-slate-950/70 px-2 py-1 text-[0.65rem] text-slate-200 border border-slate-700/80">
-                  <LayoutTemplate className="h-3 w-3 text-secondary" />
-                  Template: <span className="numeric">Vertical Split</span>
-                </span>
-                <span className="numeric rounded-full bg-slate-950/70 px-2 py-1 text-[0.6rem] text-slate-300 border border-slate-700/80">
-                  9:16 • 0:30
-                </span>
+        <div className="grid flex-1 gap-3 sm:gap-4 md:grid-cols-[1.7fr,1.1fr]">
+          {/* Signals feed */}
+          <div className="relative flex flex-col gap-3 rounded-2xl border border-slate-700/70 bg-slate-950/90 p-3 sm:p-4 overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(109,93,246,0.32),transparent_55%)] opacity-80" />
+            <div className="relative flex flex-col gap-3">
+              <div className="flex items-center justify-between text-[0.7rem]">
+                <div className="flex items-center gap-1.5">
+                  <span className="numeric text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
+                    Signals feed
+                  </span>
+                  <span className="inline-flex items-center gap-1 rounded-full border border-secondary/40 bg-secondary/10 px-2 py-0.5 text-[0.6rem] text-secondary-100">
+                    <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                    Normalized
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-[0.65rem] text-slate-300">
+                  <span className="numeric">Critical 18</span>
+                  <span className="h-1 w-1 rounded-full bg-slate-600" />
+                  <span className="numeric">High 42</span>
+                </div>
               </div>
 
-              {/* Large centered phone canvas */}
-              <div className="relative flex flex-1 items-center justify-center">
-                <div className="relative aspect-[9/16] w-[64%] sm:w-[60%] md:w-[56%] lg:w-[52%] overflow-hidden rounded-[1.25rem] border border-white/15 bg-slate-900/90 shadow-soft-elevated">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(15,118,255,0.55),transparent_60%)] opacity-80" />
-                  <div className="relative flex h-full w-full flex-col justify-between p-3">
-                    <div className="flex flex-col gap-2">
-                      <div className="h-7 w-[78%] rounded-xl bg-gradient-to-r from-primary/90 to-secondary/80" />
-                      <div className="h-3 w-[56%] rounded-md bg-slate-800/90" />
-                      <div className="mt-2 grid grid-cols-3 gap-1.5">
-                        <div className="h-7 rounded-lg bg-slate-800/90" />
-                        <div className="h-7 rounded-lg bg-slate-800/70" />
-                        <div className="h-7 rounded-lg bg-slate-800/50" />
+              {/* Filters */}
+              <div className="flex flex-wrap gap-1.5 text-[0.6rem]">
+                {["All surfaces", "Critical & High", "SLA & breach", "Unassigned"].map(
+                  (chip, idx) => (
+                    <span
+                      key={chip}
+                      className={cn(
+                        "inline-flex items-center gap-1 rounded-full border border-slate-700/70 bg-slate-900/80 px-2 py-1 text-slate-200",
+                        idx === 1 && "border-primary/80 bg-primary/10"
+                      )}
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      <span className="numeric">{chip}</span>
+                    </span>
+                  )
+                )}
+              </div>
+
+              {/* Signals list */}
+              <div className="mt-1 space-y-1.5 text-[0.7rem]">
+                {[
+                  {
+                    sev: "Critical",
+                    color:
+                      "border-rose-500/80 bg-gradient-to-r from-rose-500/10 via-rose-500/5 to-transparent",
+                    title: "Privileged access from unknown workstation",
+                    surface: "Core admin · Web app",
+                    meta: "SLA breach in 2h • Owner: AppSec",
+                  },
+                  {
+                    sev: "High",
+                    color:
+                      "border-amber-400/80 bg-gradient-to-r from-amber-400/10 via-amber-400/5 to-transparent",
+                    title: "Public S3 bucket with PII discovered",
+                    surface: "Data lake · Cloud",
+                    meta: "New asset • Discovered by CSPM",
+                  },
+                  {
+                    sev: "High",
+                    color:
+                      "border-sky-400/80 bg-gradient-to-r from-sky-400/10 via-sky-400/5 to-transparent",
+                    title: "Unpatched critical vuln in payment service",
+                    surface: "Payments API · Services",
+                    meta: "CVSS 9.8 • 3 signals merged",
+                  },
+                  {
+                    sev: "Medium",
+                    color:
+                      "border-emerald-400/70 bg-gradient-to-r from-emerald-400/10 via-emerald-400/5 to-transparent",
+                    title: "Excessive permissions on internal dashboard",
+                    surface: "Ops portal · Web app",
+                    meta: "Suggested fix ready • Needs review",
+                  },
+                ].map((row, idx) => (
+                  <div
+                    key={row.title}
+                    className={cn(
+                      "group flex items-start gap-2 rounded-xl border pl-2.5 pr-3 py-2.5 bg-slate-900/90 hover:bg-slate-900/95 transition-colors",
+                      row.color
+                    )}
+                  >
+                    <div className="mt-[5px] h-2 w-2 rounded-full bg-gradient-to-br from-primary to-secondary shadow-[0_0_0_3px_rgba(56,189,248,0.25)]" />
+                    <div className="flex flex-1 flex-col gap-0.5">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="truncate text-[0.72rem] text-slate-50">
+                          {row.title}
+                        </span>
+                        <span
+                          className={cn(
+                            "inline-flex shrink-0 items-center rounded-full px-1.5 py-0.5 text-[0.6rem] font-medium",
+                            idx === 0
+                              ? "bg-rose-500/15 text-rose-300 border border-rose-500/50"
+                              : idx === 1
+                              ? "bg-amber-400/15 text-amber-200 border border-amber-400/50"
+                              : idx === 2
+                              ? "bg-sky-400/15 text-sky-200 border border-sky-400/50"
+                              : "bg-emerald-400/15 text-emerald-200 border border-emerald-400/50"
+                          )}
+                        >
+                          {row.sev}
+                        </span>
                       </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="h-2.5 w-20 rounded-full bg-secondary/80" />
-                      <div className="flex items-center gap-1.5">
-                        <span className="h-1.5 w-12 rounded-full bg-slate-700/80" />
-                        <span className="h-1.5 w-6 rounded-full bg-slate-700/60" />
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[0.62rem] text-slate-300">
+                        <span className="numeric">{row.surface}</span>
+                        <span className="h-1 w-1 rounded-full bg-slate-600" />
+                        <span className="text-slate-400">{row.meta}</span>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Multi-track timeline */}
-              <div className="rounded-xl border border-slate-700/70 bg-slate-950/90 px-3 py-3.5">
-                <div className="mb-2 flex items-center justify-between text-[0.65rem] text-slate-400">
-                  <span className="numeric uppercase tracking-[0.2em]">
-                    Signals queue
-                  </span>
-                  <span>Now — 30 days</span>
-                </div>
-
-                {/* Time ruler / playhead */}
-                <div className="relative mb-3 h-6">
-                  <div className="absolute inset-y-0 left-0 w-full rounded-full bg-slate-900/80 border border-slate-700/80" />
-                  <div className="absolute inset-y-1 left-6 w-[68%] rounded-full bg-gradient-to-r from-primary/60 via-secondary/50 to-accent/60" />
-                  <div className="absolute inset-y-0 left-1/3 w-px bg-secondary" />
-                </div>
-
-                {/* Tracks */}
-                <div className="space-y-1.5 text-[0.65rem]">
-                  {[
-                    { label: "Signals", color: "from-primary/80 to-secondary/70" },
-                    {
-                      label: "Assets",
-                      color: "from-emerald-500/80 to-emerald-400/70",
-                    },
-                    {
-                      label: "Workflows",
-                      color: "from-sky-500/70 to-sky-400/60",
-                    },
-                  ].map((track) => (
-                    <div key={track.label} className="flex items-center gap-2">
-                      <span className="w-16 shrink-0 text-[0.6rem] text-slate-400 uppercase tracking-[0.16em]">
-                        {track.label}
-                      </span>
-                      <div className="relative flex-1 h-4 rounded-full bg-slate-900/80 border border-slate-800/80 overflow-hidden">
-                        <div
-                          className={cn(
-                            "absolute inset-y-0 left-[6%] w-[32%] rounded-full bg-gradient-to-r",
-                            track.color
-                          )}
-                        />
-                        <div
-                          className={cn(
-                            "absolute inset-y-0 left-[42%] w-[28%] rounded-full bg-gradient-to-r opacity-80",
-                            track.color
-                          )}
-                        />
-                        <div
-                          className={cn(
-                            "absolute inset-y-0 left-[72%] w-[18%] rounded-full bg-gradient-to-r opacity-70",
-                            track.color
-                          )}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Right sidebar: scenes, outputs, stats */}
+          {/* Right-hand summary: assets + posture */}
           <div className="flex flex-col gap-3.5 text-[0.7rem] text-slate-200">
-            {/* Scenes sidebar */}
+            {/* Risk score / posture */}
+            <div className="rounded-2xl border border-slate-700/80 bg-slate-950/90 p-3.5">
+              <div className="mb-3 flex items-center justify-between text-[0.65rem] text-slate-400">
+                <span className="numeric uppercase tracking-[0.2em]">
+                  Posture overview
+                </span>
+                <span>Last 30 days</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="relative h-16 w-16">
+                  <div className="absolute inset-0 rounded-full border border-slate-700/80 bg-slate-900/80" />
+                  <div className="absolute inset-[4px] rounded-full bg-[conic-gradient(from_210deg,_#22c55e_0deg,_#22c55e_220deg,_rgba(30,64,175,0.7)_220deg,_rgba(15,23,42,1)_360deg)] opacity-90" />
+                  <div className="absolute inset-[10px] flex items-center justify-center rounded-full bg-slate-950/95">
+                    <span className="numeric text-sm text-emerald-400">92</span>
+                  </div>
+                </div>
+                <div className="flex flex-1 flex-col gap-1 text-[0.65rem]">
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-300">Signals closed</span>
+                    <span className="numeric text-emerald-400">+4.2x</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-300">
+                      High & critical coverage
+                    </span>
+                    <span className="numeric text-sky-300">97%</span>
+                  </div>
+                  <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-slate-900">
+                    <div className="h-full w-[76%] rounded-full bg-gradient-to-r from-primary via-secondary to-accent" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Assets + SLAs */}
             <div className="rounded-2xl border border-slate-700/80 bg-slate-950/90 p-3.5">
               <div className="mb-2 flex items-center justify-between text-[0.65rem] text-slate-400">
                 <span className="numeric uppercase tracking-[0.2em]">
-                  Queues
+                  Assets & SLAs
                 </span>
-                <span>Signal views</span>
+                <span>By surface</span>
               </div>
-              <div className="space-y-2">
-                {["Backlog", "In triage", "Ready to fix"].map((label, idx) => (
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  { label: "Assets watched", value: "87", tone: "emerald" },
+                  { label: "SLAs on track", value: "91%", tone: "sky" },
+                  { label: "Integrations", value: "12", tone: "violet" },
+                  { label: "Exec views", value: "4", tone: "amber" },
+                ].map((card) => (
                   <div
-                    key={label}
-                    className={cn(
-                      "rounded-lg border border-slate-700/70 bg-slate-900/80 px-3 py-2.5",
-                      idx === 0 && "border-secondary/80 bg-secondary/10"
-                    )}
+                    key={card.label}
+                    className="flex flex-col gap-1 rounded-lg border border-slate-700/70 bg-slate-900/80 px-2.5 py-2"
                   >
-                    <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between">
-                      <div className="flex items-center gap-1.5">
-                        <span className="numeric text-[0.6rem] text-slate-400">
-                          0{idx + 1}
-                        </span>
-                        <span>{label}</span>
-                      </div>
-                      <span className="numeric text-[0.6rem] text-slate-400 sm:text-right mt-0.5 sm:mt-0">
-                        {idx === 0
-                          ? "Untriaged"
-                          : idx === 1
-                          ? "Assigned"
-                          : "In verification"}
-                      </span>
+                    <span className="numeric text-[0.6rem] text-slate-400">
+                      {card.label}
+                    </span>
+                    <span className="numeric text-sm text-slate-100">
+                      {card.value}
+                    </span>
+                    <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-slate-950">
+                      <div
+                        className={cn(
+                          "h-full w-[70%] rounded-full bg-gradient-to-r",
+                          card.tone === "emerald" &&
+                            "from-emerald-400/80 to-emerald-300/80",
+                          card.tone === "sky" &&
+                            "from-sky-400/80 to-sky-300/80",
+                          card.tone === "violet" &&
+                            "from-primary/80 to-secondary/80",
+                          card.tone === "amber" &&
+                            "from-amber-400/80 to-amber-300/80"
+                        )}
+                      />
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Outputs */}
-            <div className="rounded-2xl border border-slate-700/80 bg-slate-950/90 p-3.5">
-              <div className="mb-2 flex items-center justify-between text-[0.65rem] text-slate-400">
-                <span className="numeric uppercase tracking-[0.2em]">
-                  Posture views
-                </span>
-                <span>4 dashboards</span>
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                {["Signals", "Assets", "SLAs", "Exec"].map((size, i) => (
-                  <div
-                    key={size}
-                    className={cn(
-                      "flex items-center justify-between rounded-lg px-2.5 py-2 border border-slate-700/60 bg-slate-900/80",
-                      i === 0 && "border-secondary/80 bg-secondary/10"
-                    )}
-                  >
-                    <span className="numeric text-[0.65rem]">{size}</span>
-                    <span className="h-1.5 w-5 rounded-full bg-slate-700/80" />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Compact stats row */}
-            <div className="grid gap-3 sm:grid-cols-2">
+            {/* Connected surfaces */}
+            <div className="grid gap-3 sm:grid-cols-1">
               <motion.div
                 className="card-floating relative flex flex-col gap-2 rounded-xl border border-slate-700/70 bg-slate-950/90 p-3"
                 animate={{ y: [0, -4, 0] }}
@@ -311,44 +343,10 @@ function HeroTemplateStack() {
                 <div className="flex items-center justify-between text-[0.7rem] text-slate-300">
                   <span className="inline-flex items-center gap-1 text-secondary">
                     <Zap className="h-3.5 w-3.5" />
-                    Signals queue
+                    Live surfaces
                   </span>
                   <span className="numeric text-[0.65rem] text-slate-400">
-                    Live
-                  </span>
-                </div>
-                <div className="space-y-1.5 text-[0.7rem]">
-                  <div className="flex items-center justify-between">
-                    <span>Average time to triage</span>
-                    <span className="numeric text-slate-100">18 min</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span>Signals closed this month</span>
-                    <span className="numeric text-emerald-400">+4.2x</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span>High & critical coverage</span>
-                    <span className="numeric text-sky-300">97%</span>
-                  </div>
-                </div>
-                <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-slate-900">
-                  <div className="h-full w-[76%] rounded-full bg-gradient-to-r from-primary via-secondary to-accent" />
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="card-floating relative flex flex-col gap-2 rounded-xl border border-slate-700/70 bg-slate-950/90 p-3"
-                animate={{ y: [0, 4, 0] }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <div className="flex items-center justify-between text-[0.7rem] text-slate-300">
-                  <span>Surfaces</span>
-                  <span className="numeric text-[0.65rem] text-slate-400">
-                    Connected
+                    Streaming
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-1.5 text-[0.6rem]">
@@ -377,10 +375,10 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="section pt-10 sm:pt-12 lg:pt-16 pb-12 sm:pb-16 lg:pb-20"
+      className="relative overflow-hidden pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-24"
       aria-labelledby="hero-heading"
     >
-      <div className="app-container grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] items-center">
+      <div className="app-container grid min-h-[calc(100vh-4.5rem)] items-center gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
         <motion.div
           className="space-y-6 sm:space-y-7"
           variants={containerVariants}
