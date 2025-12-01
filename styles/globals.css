@@ -6,7 +6,7 @@
   Global design tokens (mapped to Tailwind theme via CSS variables)
   Colors from TASK:
   - Primary: #6D5DF6 (Electric Violet)
-  - Secondary: #0AE2FF (Cyan Neon)
+  - Secon dary: #0AE2FF (Cyan Neon)
   - Accent: #F54DFF (Magenta)
   - Background: ultra-dark gradient
   - Surface: soft glassmorphism blur panels
@@ -57,6 +57,9 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -152,7 +155,7 @@ body {
 }
 
 .section-description {
-  @apply text-sm sm:text-base text-muted-foreground;
+  @apply text-base md:text-lg text-muted-foreground;
 }
 
 /* Subtle animated accent lines for section headers */
@@ -362,7 +365,7 @@ body {
 }
 
 .section-description {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: hsl(var(--muted-foreground));
 }
 

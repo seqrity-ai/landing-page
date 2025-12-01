@@ -9,6 +9,13 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
   const pathname = usePathname();
 
+  const primaryFooterLinks = FOOTER_LINKS.filter((link) =>
+    ["/#how-it-works", "/#analytics", "/security", "/privacy", "/terms"].includes(link.href)
+  );
+  const secondaryFooterLinks = FOOTER_LINKS.filter(
+    (link) => !primaryFooterLinks.some((item) => item.href === link.href)
+  );
+
   return (
     <footer className="border-t border-slate-800/70 bg-slate-950/95 mt-16">
       <div className="app-container py-8 sm:py-10">
@@ -33,20 +40,19 @@ export function SiteFooter() {
                 </span>
               </div>
             </Link>
-            <p className="text-xs text-slate-400">
-              seqrity.ai is designed for global, security-conscious teams. These
-              links cover how we handle data, security, and governance as a
-              modern international SaaS platform.
+            <p className="text-sm text-slate-400">
+              Built for security-conscious teams. Use these links to see how we
+              handle data, security and governance.
             </p>
           </div>
 
-          <div className="grid gap-6 text-xs text-slate-300 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 text-sm text-slate-300 sm:grid-cols-2 lg:grid-cols-3">
             <div className="space-y-2">
               <div className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-slate-500">
                 Product & posture
               </div>
               <ul className="space-y-1.5">
-                {FOOTER_LINKS.map((link) => (
+                {primaryFooterLinks.map((link) => (
                   <li key={link.href}>
                     <a
                       href={link.href}
@@ -64,14 +70,17 @@ export function SiteFooter() {
 
             <div className="space-y-2">
               <div className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-slate-500">
-                Connect
+                Legal & support
               </div>
               <ul className="space-y-1.5">
-                {SOCIAL_LINKS.map((link) => (
-                  <li key={link.label}>
+                {secondaryFooterLinks.map((link) => (
+                  <li key={link.href}>
                     <a
                       href={link.href}
-                      className="hover:text-slate-50 transition-colors"
+                      className={cn(
+                        "hover:text-slate-50 transition-colors",
+                        pathname === link.href && "text-slate-50 font-semibold"
+                      )}
                     >
                       {link.label}
                     </a>
@@ -86,22 +95,20 @@ export function SiteFooter() {
               </div>
               <ul className="space-y-1.5">
                 <li className="text-slate-400">
-                  Built with enterprise security, privacy and auditability in
-                  mind.
+                  Built for enterprise-grade security, privacy and auditability.
                 </li>
                 <li className="text-slate-400">
-                  Supports common frameworks (e.g., SOC 2, ISO 27001, GDPR) as
-                  part of your broader program.
+                  Supports frameworks like SOC 2, ISO 27001 and GDPR.
                 </li>
-                <li className="text-slate-500 text-[0.68rem]">
-                  For detailed information, please refer to our Privacy, Security and Legal pages.
+                <li className="text-slate-500 text-xs">
+                  See our Privacy, Security and Legal pages for details.
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col gap-2 border-t border-slate-800/60 pt-4 text-[0.7rem] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex flex-col gap-2 border-t border-slate-800/60 pt-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>
             &copy; {year} {SITE.appName}. All rights reserved.
           </p>

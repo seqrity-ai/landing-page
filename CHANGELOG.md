@@ -31,3 +31,6 @@
 ## 2025-12-01
 - snapshot: 0.0.1 (c168cea)
 
+## 2025-12-01
+- Frezzed content (faf90e2)
+

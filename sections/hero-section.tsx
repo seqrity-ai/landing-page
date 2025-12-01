@@ -414,7 +414,7 @@ export function HeroSection() {
           <motion.p
             custom={2}
             variants={staggeredVariants}
-            className="max-w-xl text-sm sm:text-base text-muted-foreground"
+            className="max-w-xl text-base md:text-lg text-muted-foreground"
           >
             {SITE.description}
           </motion.p>
@@ -442,7 +442,7 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <div className="flex items-center gap-3 text-xs text-slate-300">
+            <div className="flex items-center gap-3 text-sm text-slate-300">
               <div className="relative flex -space-x-2">
                 {["AR", "ML", "JC"].map((initials) => (
                   <div
@@ -456,7 +456,7 @@ export function HeroSection() {
                   +
                 </div>
               </div>
-              <span className="text-[0.7rem] leading-tight text-slate-300">
+              <span className="text-sm leading-tight text-slate-300">
                 <span className="numeric font-semibold text-slate-50">
                   Security & engineering teams
                 </span>{" "}
@@ -468,7 +468,7 @@ export function HeroSection() {
           <motion.ul
             custom={4}
             variants={staggeredVariants}
-            className="mt-2 grid gap-2 text-xs text-slate-300 sm:grid-cols-3"
+            className="mt-2 grid gap-2 text-sm text-slate-300 sm:grid-cols-3"
           >
             {HERO_HIGHLIGHTS.map((item) => (
               <li

@@ -107,7 +107,7 @@ export function FeaturesSection() {
                       </div>
                     </div>
                   </div>
-                  <p className="text-xs sm:text-[0.8rem] text-slate-400">
+                  <p className="text-sm sm:text-[0.9rem] md:text-base text-slate-400">
                     {feature.description}
                   </p>
 

@@ -94,7 +94,7 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-slate-300">
+        <nav className="hidden md:flex items-center gap-8 text-sm lg:text-base font-medium text-slate-300">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}

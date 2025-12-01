@@ -7,7 +7,7 @@ export const SITE = {
   primaryCTA: "Book a demo",
   secondaryCTA: "Watch tour",
   description:
-    "seqrity.ai connects your apps, APIs, mobile apps, code and infrastructure to unify noisy scanner outputs into prioritized Signals, orchestrate findings from discovery to remediation, and give security and engineering leaders a single view of application risk.",
+    "seqrity.ai connects your apps, APIs, mobile apps, code and infrastructure to turn noisy scanner outputs into prioritized Signals and give security and engineering teams one view of application risk.",
 } as const;
 
 export type NavLink = {
@@ -24,9 +24,9 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const HERO_HIGHLIGHTS: string[] = [
-  "Single Signal feed across SAST, DAST, pentests and cloud",
-  "Lifecycle workflows from detection to verified fix",
-  "Asset-centric view across apps, APIs, mobile, code and network",
+  "One Signal feed across scanners, pentests and cloud",
+  "Workflows from detection to verified fix",
+  "Asset-centric view of apps, APIs, mobile, code and hosts",
 ];
 
 export type HowItWorksStep = {
@@ -42,28 +42,28 @@ export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
     label: "Step 1",
     title: "Connect tools, repos and assets",
     description:
-      "Hook up scanners, CI/CD, code hosting, cloud and network inventory so seqrity.ai can see your application surface in one place.",
+      "Connect scanners, CI/CD, code, cloud and network inventory so seqrity.ai sees your application surface in one place.",
   },
   {
     id: 2,
     label: "Step 2",
     title: "Normalize findings into Signals",
     description:
-      "seqrity.ai ingests findings from SAST, DAST, SCA, pentests and custom sources, deduplicates noise and turns them into prioritized Signals with severity and state.",
+      "Ingest findings from SAST, DAST, SCA, pentests and custom sources, remove noise and turn them into prioritized Signals.",
   },
   {
     id: 3,
     label: "Step 3",
     title: "Triage and assign with full context",
     description:
-      "Work from a single Signal queue that ties each finding back to assets, endpoints, code refs and owners so AppSec, DevSecOps and engineers can act quickly.",
+      "Work from a single Signal queue that ties findings to assets, endpoints, code and owners so teams can act quickly.",
   },
   {
     id: 4,
     label: "Step 4",
     title: "Automate workflows with the Marketplace",
     description:
-      "Extend seqrity.ai with marketplace tools, agent-like workflows and automations that sync status, create tickets and verify fixes across workspaces.",
+      "Extend seqrity.ai with marketplace tools, workflows and automations that sync status, create tickets and verify fixes.",
   },
 ];
 
@@ -80,7 +80,7 @@ export const FEATURE_CARDS: FeatureCard[] = [
     id: "unified-signals",
     name: "Unified Signals feed",
     description:
-      "Ingest and normalize findings from scanners, pentests and cloud sources into a single Signal queue with severity, state and ownership.",
+      "Normalize findings from scanners, pentests and cloud into a single Signal queue with severity, state and ownership.",
     icon: "sparkles",
     badge: "Noise-aware",
   },
@@ -88,35 +88,35 @@ export const FEATURE_CARDS: FeatureCard[] = [
     id: "asset-visibility",
     name: "Asset-centric visibility",
     description:
-      "View risk by asset across web apps, APIs, mobile, source code, hosts and locations, with Signals tied back to endpoints and git references.",
+      "View risk by asset across apps, APIs, mobile, code and hosts, with Signals tied to endpoints and git references.",
     icon: "panelsTopLeft",
   },
   {
     id: "lifecycle-workflow",
     name: "Finding lifecycle & workflow",
     description:
-      "Model the full lifecycle of a finding from open to mitigated, deferred or closed with states, assignments, SLAs and reviews across teams.",
+      "Model the lifecycle of findings with states, assignments, SLAs and reviews across teams.",
     icon: "sliders",
   },
   {
     id: "marketplace-automation",
     name: "Marketplace & automation",
     description:
-      "Browse and deploy security tools, integrations and agent-like workflows from the built-in Marketplace without custom engineering.",
+      "Deploy security tools, integrations and workflows from the built-in Marketplace without custom engineering.",
     icon: "squareStack",
   },
   {
     id: "multi-workspace",
     name: "Multi-workspace & roles",
     description:
-      "Segment tenants, environments or business units with workspaces and roles for admins, resources and end users, all on one platform.",
+      "Segment tenants, environments or business units with workspaces and roles for admins and end users.",
     icon: "users",
   },
   {
     id: "security-analytics",
     name: "Security posture analytics",
     description:
-      "Track open vs closed Signals, MTTR, risk by severity and asset type with exec-ready dashboards and workspace-level reporting.",
+      "Track open vs closed Signals, MTTR and risk by severity and asset type with exec-ready dashboards.",
     icon: "lineChart",
   },
 ];
@@ -141,7 +141,7 @@ export const TEMPLATE_GALLERY: TemplateItem[] = [
     category: "Signals overview",
     duration: "Real-time",
     description:
-      "Visualize how many Signals sit in Info, Low, Medium, High and Critical across workspaces.",
+      "See how many Signals sit in Info, Low, Medium, High and Critical across workspaces.",
     aspect: "Dashboard",
     channels: "All workspaces",
     automationTag: "Live posture",
@@ -153,7 +153,7 @@ export const TEMPLATE_GALLERY: TemplateItem[] = [
     category: "Remediation analytics",
     duration: "Last 90 days",
     description:
-      "Track mean time to remediate by severity so AppSec and Eng leaders can align on SLAs.",
+      "Track mean time to remediate by severity so teams can align on SLAs.",
     aspect: "Line chart",
     channels: "Signals lifecycle",
     automationTag: "Trend analysis",
@@ -164,7 +164,7 @@ export const TEMPLATE_GALLERY: TemplateItem[] = [
     category: "Asset coverage",
     duration: "Snapshot",
     description:
-      "See how well web apps, APIs, mobile apps, code repos and network locations are covered by testing.",
+      "See how well apps, APIs, mobile, code and network locations are covered by testing.",
     aspect: "Grid",
     channels: "Apps · APIs · Mobile · Network",
     automationTag: "Surface mapping",
@@ -175,7 +175,7 @@ export const TEMPLATE_GALLERY: TemplateItem[] = [
     category: "Operations",
     duration: "Rolling 30 days",
     description:
-      "Understand how many Signals were opened, triaged, mitigated and closed to spot bottlenecks.",
+      "See how many Signals were opened, triaged, mitigated and closed to spot bottlenecks.",
     aspect: "Bars",
     channels: "Teams & workspaces",
     automationTag: "Ops telemetry",
@@ -186,7 +186,7 @@ export const TEMPLATE_GALLERY: TemplateItem[] = [
     category: "Risk & compliance",
     duration: "Current period",
     description:
-      "Highlight Signals approaching or breaching SLA so teams can prioritize before audits.",
+      "Highlight Signals approaching or breaching SLAs so teams can prioritize before audits.",
     aspect: "Table",
     channels: "Critical & High",
     automationTag: "Exception focus",
@@ -197,7 +197,7 @@ export const TEMPLATE_GALLERY: TemplateItem[] = [
     category: "Reporting",
     duration: "Quarter",
     description:
-      "Summarize posture, coverage and trends into a single view to brief executives and customers.",
+      "Summarize posture, coverage and trends into a single view for executives and customers.",
     aspect: "Summary",
     channels: "Stakeholders",
     automationTag: "Shareable view",
@@ -320,7 +320,7 @@ export const USE_CASES: UseCase[] = [
     id: "security-ops",
     label: "Security operations",
     description:
-      "Monitor application-layer risk alongside infrastructure, with clear ownership and workflows.",
+      "Monitor application-layer risk alongside infrastructure with clear ownership and workflows.",
     icon: "radar",
   },
   {
